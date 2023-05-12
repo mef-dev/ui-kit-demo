@@ -1,0 +1,21 @@
+<h3 class="p-l-20 p-t-15">slide-up</h3>
+<div class="container">
+  <p class="fs-30 p-t-10">Modal window "slide-up". By clicking on the "Show" button, you can see how it works.</p>
+  <button type="button" class="btn btn-primary m-4" (click)="showModal()">Show</button>
+
+<mefdev-slide-up-modal [show]="notificationModalIsShow" (isClouse)="notificationModalIsShow = false" #mdSlideUp>
+
+  <ng-template #modal_header>
+      <div class="form-group">
+        <h3>Modal header</h3> 
+      </div> 
+ </ng-template>
+  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae aspernatur cumque optio corrupti itaque deserunt animi blanditiis accusamus voluptates.</div>
+  <ng-template #modal_footer>
+    <div class="form-group">
+      <h4>Modal footer</h4> 
+    </div> 
+  </ng-template>
+
+</mefdev-slide-up-modal>
+</div>

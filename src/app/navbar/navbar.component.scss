@@ -1,0 +1,27 @@
+/* Загальні стилі для скролла */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Стилі для полоски скролла */
+  ::-webkit-scrollbar-track {
+    background-color: #b4b3cc;
+  }
+  
+  /* Стилі для ковпачка скролла */
+  ::-webkit-scrollbar-thumb {
+    background-color: #726d6d;
+    border-radius: 5px;
+  }
+  
+  /* Зміна кольору ковпачка при наведенні */
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+  }
+
+ a{
+  color:white;
+ }
+ a:hover{
+  color:red;
+ }

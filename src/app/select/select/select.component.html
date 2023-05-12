@@ -1,0 +1,71 @@
+<h3 class="p-l-20 p-t-15">select</h3>
+
+<div class="container">
+  <div class="row d-flex">
+
+    <medev-card-simple class="col-md-6 p-t-20">
+
+      <div style="border-radius:10px ; margin: 10px; padding: 10px;">
+        <p class="form-group">Select Common</p>
+        <p>This is common select. Press select menu below.</p>
+        <mefdev-select
+            class="float-end"
+            style="width: 200px"
+            [PlaceHolder]="'PlaceHolder'"
+            [FirstDefault]="false">
+                <mefdev-option [Label]="'Label 1'" [Value]="'Label 1'"></mefdev-option>
+                <mefdev-option [Label]="'Label 2'" [Value]="'Label 2'"></mefdev-option>
+                <mefdev-option [Label]="'Label 3'" [Value]="'Label 3'"></mefdev-option>
+                <mefdev-option [Label]="'Label 4'" [Value]="'Label 4'"></mefdev-option>
+                <mefdev-option [Label]="'Label 5'" [Value]="'Label 5'"></mefdev-option>
+        </mefdev-select>
+      </div>
+
+    </medev-card-simple>
+        
+
+    <medev-card-simple class="col-md-6 p-t-20">
+
+      <div style="border-radius:10px ; margin: 10px; padding: 10px;">
+        <p class="form-group">Select Multiple</p>
+        <p>This is multiple select. Press select menu below.</p>
+        <mefdev-select
+            class="float-end"
+            style="width: 200px"
+            [Mode]="'multiple'"
+            [FirstDefault]="true">
+                <mefdev-option [Label]="'Label 1'" [Value]="'Label 1'"></mefdev-option>
+                <mefdev-option [Label]="'Label 2'" [Value]="'Label 2'"></mefdev-option>
+                <mefdev-option [Label]="'Label 3'" [Value]="'Label 3'"></mefdev-option>
+                <mefdev-option [Label]="'Label 4'" [Value]="'Label 4'"></mefdev-option>
+                <mefdev-option [Label]="'Label 5'" [Value]="'Label 5'"></mefdev-option>
+        </mefdev-select>
+      </div>
+
+    </medev-card-simple>
+
+      
+    
+    <medev-card-simple class="col-md-6 p-t-20">
+
+      <div style="border-radius:10px ; margin: 10px; padding: 10px;">
+        <p class="form-group">Select Combobox</p>
+        <p>This is autocomplit select. Press select menu below.</p>
+        <mefdev-select
+            class="float-end"
+            style="width: 200px"
+            [Mode]="'combobox'"
+            [FirstDefault]="true">
+                <mefdev-option [Label]="'Label 1'" [Value]="'Label 1'"></mefdev-option>
+                <mefdev-option [Label]="'Label 2'" [Value]="'Label 2'"></mefdev-option>
+                <mefdev-option [Label]="'Label 3'" [Value]="'Label 3'"></mefdev-option>
+                <mefdev-option [Label]="'Label 4'" [Value]="'Label 4'"></mefdev-option>
+                <mefdev-option [Label]="'Label 5'" [Value]="'Label 5'"></mefdev-option>
+        </mefdev-select>
+      </div>
+
+    </medev-card-simple>
+    
+      
+  </div>
+</div>
