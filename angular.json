@@ -34,7 +34,7 @@
             ],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
-              "node_modules/natec/mef-dev-ui-kit/src/lib/styles/pg/core.scss",
+              "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/pg/core.scss",
               "src/styles.scss",
               "node_modules/prismjs/themes/prism-okaidia.css",
               "node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css",
