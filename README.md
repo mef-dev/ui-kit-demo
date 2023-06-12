@@ -5,7 +5,7 @@ This repository is a web application that demonstrates the display of all elemen
 
 This application is designed to visualize all available elements in the mef-dev-ui-kit library. It provides users with the opportunity to explore and test various components and functionalities of the library before using them in their own projects.
 
-To learn more about the library, visit the official documentation and demo: [mef.dev/ui_kit](https://mef.dev/ui_kit/index.html "mef-dev-ui-kit")
+To learn more about the library, visit the official documentation: [mef.dev/ui_kit](https://mef.dev/ui_kit/index.html "mef-dev-ui-kit") and demo:[mef.dev/ui_kit_demo](https://mef.dev/ui_kit_demo "mef-dev-ui-kit-demo")
 ___
 
 ## Getting Started
@@ -22,7 +22,8 @@ ___
 ### Usage
 In the application, you will find different pages showcasing various components and features of the `mef-dev-ui-kit` library. You can browse through them, try out different configurations, and experiment with them.
 
-### Useful links:
+### Useful links:   
 ___
-  > * Documentation of the library: https://mef.dev/ui_kit 
+  > * Documentation of the library: https://mef.dev/ui_kit
+  > * Demo of the library: https://mef.dev/ui_kit_demo
   > * Library package: https://www.npmjs.com/package/@natec/mef-dev-ui-kit
