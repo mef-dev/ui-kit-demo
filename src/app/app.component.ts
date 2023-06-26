@@ -6,17 +6,11 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 
 export class AppComponent {
-  showSidebar = true;
+  constructor() {
+  }
 
-  constructor(private router: Router) {
-    this.router.events.pipe(
-      filter((event: any) => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
-      this.showSidebar = !(event.url.includes('/view'))
-      });
-    }
   }

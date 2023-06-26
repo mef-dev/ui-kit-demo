@@ -1,0 +1,126 @@
+<div class="container">
+  <h1 id="-natec-mef-dev-ui-kit">@natec/mef-dev-ui-kit</h1>
+  <h2 id="description">Description</h2>
+  <p>This is Ui-kit-lib to create plugins according to the template and visual on the platform <a href="https://preview.mef.dev/">mefdev.com</a> with the help of ready made solutions.It provides users with the opportunity to explore and test various components and functionalities of the library before using them in their own projects.
+  How to create your first Ui-package click <a href="https://mef.dev/dev_guides/first_ui_plugin.md">here</a></p>
+  <p>Also you can check displaying of all the elements together here <a href="https://mef.dev/ui_kit_demo">UI-kit-demo</a>.</p>
+  <p>This guide created for Angular@15 version project. Cause we will use packages compatible with Angular 15 version.</p>
+  <h2 id="version-control">Version control</h2>
+  <p>You can use the library on the following versions of Angular:
+  |Angular/CLI|@natec/mef-dev-ui-kit|
+  |--------|:--------------|
+  |v.13    |     v.1   |
+  |v.14    |     v.14  |
+  |v.15    |     v.15  |
+  |v.16    |     v.16  |</p>
+  <h2 id="getting-started">Getting Started</h2>
+  <h3 id="installing">Installing</h3>
+  <p>  Firstly you need to install following packages:</p>
+  <blockquote>
+  <p>@natec/mef-dev-ui-kit: </p>
+  <pre><code class="lang-sh">  <span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">i</span> @<span class="hljs-keyword">natec</span>/<span class="hljs-keyword">mef</span>-<span class="hljs-keyword">dev</span>-<span class="hljs-keyword">ui</span>-<span class="hljs-keyword">kit</span>@<span class="hljs-keyword">15</span>
+  </code></pre>
+  <p>Simple table extension with sorting, filtering, paging... for Angular apps. ngx-datatable: </p>
+  <pre><code class="lang-sh">  <span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">i</span> @<span class="hljs-keyword">swimlane</span>/<span class="hljs-keyword">ngx</span>-<span class="hljs-keyword">datatable</span>@<span class="hljs-keyword">20</span>
+  </code></pre>
+  <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development. bootstrap:</p>
+  <pre><code class="lang-sh">  npm <span class="hljs-selector-tag">i</span> bootstrap@<span class="hljs-number">5</span>
+  </code></pre>
+  <p>Ngx-bootstrap provides Bootstrap components powered by Angular, so you don&#39;t need to include original JS components.ngx-bootstrap:</p>
+  <pre><code class="lang-sh">  npm <span class="hljs-selector-tag">i</span> ngx-bootstrap@<span class="hljs-number">10</span>
+  </code></pre>
+  <p>CSS font-family parser/stringifier. Font-awesome:</p>
+  <pre><code class="lang-sh">  npm <span class="hljs-selector-tag">i</span> <span class="hljs-attribute">font</span>-awesome@<span class="hljs-number">4</span>
+  </code></pre>
+  <h3 id="adding-dependencies-">Adding dependencies:</h3>
+  <p>  Now you need to add path in your Angular.json file</p>
+  </blockquote>
+  <pre><code class="lang-html">  <span class="hljs-string">"architect"</span>: {{'{'}}
+      <span class="hljs-string">"build"</span>: {{'{'}}
+        <span class="hljs-string">"options"</span>: {{'{'}}
+          <span class="hljs-string">"styles"</span>: [
+                <span class="hljs-string">"node_modules/bootstrap/scss/bootstrap.scss"</span>,
+                <span class="hljs-string">"node_modules/@natec/mef-dev-ui-kit/src/lib/styles/pg/core.scss"</span>,
+                <span class="hljs-string">"node_modules/font-awesome/scss/font-awesome.scss"</span>,
+                <span class="hljs-string">"src/styles.scss"</span>
+          ]
+        {{'}'}}
+      {{'}'}}
+    {{'}'}}
+  </code></pre>
+  <h3 id="usage">Usage</h3>
+  <p>Firstly, you need to import BrowserAnimationsModule in your <code>app.module.ts</code></p>
+  <pre><code class="lang-html"><span class="hljs-keyword">import</span> {{'{'}} NgModule {{'}'}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+  <span class="hljs-keyword">import</span> {{'{'}} BrowserModule {{'}'}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/platform-browser'</span>;
+  <span class="hljs-keyword">import</span> {{'{'}} BrowserAnimationsModule {{'}'}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/platform-browser/animations'</span>;
+
+  <span class="hljs-keyword">import</span> {{'{'}} AppRoutingModule {{'}'}} <span class="hljs-keyword">from</span> <span class="hljs-string">'./app-routing.module'</span>;
+  <span class="hljs-keyword">import</span> {{'{'}} AppComponent {{'}'}} <span class="hljs-keyword">from</span> <span class="hljs-string">'./app.component'</span>;
+
+  @NgModule({{'{'}}
+    declarations: [AppComponent],
+    imports: [
+      BrowserModule,
+      AppRoutingModule,
+      BrowserAnimationsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+  {{'}'}})
+  <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppModule</span> {{'{'}} }</span>
+  </code></pre>
+  <p>You need to import Module from Ui-kit-lib installed earlier in your own module, and add to imports too.
+  Example:</p>
+  <pre><code class="lang-html"><span class="hljs-keyword">import</span> {{'{'}} NgModule {{'}'}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+  <span class="hljs-keyword">import</span> {{'{'}} CommonModule {{'}'}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/common'</span>;
+  <span class="hljs-keyword">import</span> {{'{'}} MefDevCardModule {{'}'}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@natec/mef-dev-ui-kit'</span>;
+
+  @NgModule({{'{'}}
+    declarations:[],
+    imports: [
+      CommonModule,
+      MefDevCardModule,
+    ]
+  {{'}'}})
+  <span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CardsModule</span> {{'{'}} }</span>
+  </code></pre>
+  <p>After, you can use MefDev components in your project. Example of usage:</p>
+  <pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-name">mefdev-card</span>
+        <span class="hljs-attr">class</span>=<span class="hljs-string">"b-color-Light-Gray-2 pt-3"</span>
+        [<span class="hljs-attr">description</span>] = <span class="hljs-string">"'Description'"</span>
+        [<span class="hljs-attr">card_type</span>]=<span class="hljs-string">"'type'"</span>
+        [<span class="hljs-attr">img</span>]=<span class="hljs-string">"'assets/imgs/store/Frame 521.png'"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">card_title</span> &gt;</span>
+           card_title
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ng-template</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">card_footer</span>&gt;</span>
+          card_footer
+        <span class="hljs-tag">&lt;/<span class="hljs-name">ng-template</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">mefdev-card</span>&gt;</span>
+  </code></pre>
+  <h3 id="list-of-modules-you-can-import-in-your-project-">List of modules you can import in your project:</h3>
+  <ul>
+  <li>MefDevCardModule</li>
+  <li>MefDevCollapseModule</li>
+  <li>MefDevModalModule</li>
+  <li>MefDevPageLayoutsModule</li>
+  <li>MefDevFilteredFieldModule</li>
+  <li>MefDevHelpBlockModule</li>
+  <li>MefDevProgressModule</li>
+  <li>MefDevSelectModule</li>
+  <li>MefDevSwitchModule</li>
+  <li>MefDevTabsModule</li>
+  </ul>
+  <blockquote>
+  <p>Examples of other components you can find in this documentation in left menubar.</p>
+  </blockquote>
+  <h3 id="useful-links-">Useful links:</h3>
+  <hr>
+  <ul>
+  <li>Documentation of the library: <a href="https://mef.dev/ui_kit">https://mef.dev/ui_kit</a></li>
+  <li>Demo of the library: <a href="https://mef.dev/ui_kit_demo">https://mef.dev/ui_kit_demo</a></li>
+  <li>Library package: <a href="https://www.npmjs.com/package/@natec/mef-dev-ui-kit">https://www.npmjs.com/package/@natec/mef-dev-ui-kit</a></li>
+  <li>Ui-kit-lib at GitHub: <a href="https://github.com/mef-dev/ui-kit-demo.git">https://github.com/mef-dev/ui-kit-demo.git</a></li>
+  </ul>
+
+</div>
