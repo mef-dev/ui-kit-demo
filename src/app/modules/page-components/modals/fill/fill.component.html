@@ -1,0 +1,177 @@
+<h3 class="m-3">Fill modal</h3>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xl-6 col-12 d-flex flex-column row-gap-3">
+      <mefdev-card-simple>
+        <ng-template #card_title>
+          <h4>Show modal</h4>
+        </ng-template>
+        <button type="button" class="btn btn-success" (click)="pin_modal.showModal()">Open</button>
+        <p class="fs-30 p-t-10">Modal window "Fill". By clicking on the "Open" button, you can see how it works.</p>
+      </mefdev-card-simple>
+
+      <mefdev-card-simple>
+        <ng-template #card_title>
+          <h4> Update post modal window "fill" example </h4>
+        </ng-template>
+        <button type="button" class="btn btn-success" (click)="updatePostModal.showModal()">Open</button>
+        <p class="fs-30 p-t-10"> Example of usage controls in fill modal. </p>
+      </mefdev-card-simple>
+    </div>
+
+    <div class="col-xl-6 col-12 d-flex flex-column row-gap-3">
+      <mefdev-card-simple>
+        <ng-template #card_title>
+          <h4> Another example of controls in modal window "fill" example </h4>
+        </ng-template>
+        <button type="button" class="btn btn-success" (click)="searchControlsExample.showModal()">Open</button>
+        <p class="fs-30 p-t-10"> Example of usage controls in fill modal. </p>
+      </mefdev-card-simple>
+    </div>
+
+  </div>
+</div>
+
+<mefdev-fill-modal #pin_modal>
+  <ng-template #modal_header>
+    <h5 class="text-left p-b-5">
+      <span class="semi-bold text-danger">Modal title</span>
+      <br/>
+      Lorem ipsum dolor sit amet.
+    </h5>
+  </ng-template>
+
+  <div class="row h-100">
+    <div class="col-lg-9 ">
+      <input type="text" placeholder="PIN" type="password" class="form-control" id="icon-filter" name="icon-filter">
+    </div>
+    <div class="col-lg-3 no-padding sm-m-t-10 sm-text-center">
+      <button type="button" class="btn btn-primary">Button</button>
+    </div>
+  </div>
+
+  <ng-template #modal_footer>
+    <button type="button" class="btn btn-danger" (click)="pin_modal.hideModal()">Close</button>
+  </ng-template>
+</mefdev-fill-modal>
+
+
+<mefdev-fill-modal #updatePostModal>
+  <ng-template #modal_header>
+    <h5 class="text-left p-b-5">
+      <span class="semi-bold text-danger">Update post</span>
+    </h5>
+  </ng-template>
+
+  <div class="row">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Type new title">
+    </div>
+    <div class="form-group">
+      <textarea class="form-control textAreaControl"></textarea>
+    </div>
+  </div>
+  <ng-template #modal_footer>
+    <div class="w-100 d-flex justify-content-between">
+      <div class="form-group d-flex flex-column align-items-start">
+        <label> Notify all people </label>
+        <input type="checkbox">
+      </div>
+      <div>
+        <button type="button" class="btn btn-danger" (click)="updatePostModal.hideModal()"> Update</button>
+      </div>
+    </div>
+  </ng-template>
+</mefdev-fill-modal>
+
+
+<mefdev-fill-modal #searchControlsExample>
+  <ng-template #modal_header>
+    <h5 class="text-left p-b-5">
+      <span class="semi-bold text-danger"> Search </span>
+      <h4> Using this modal window you are able looking for a people </h4>
+    </h5>
+  </ng-template>
+
+  <div class="row">
+    <div class="form-group">
+      <label> Name, Surname or NickName </label>
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label> Country </label>
+        <mefdev-select class="w-100" [Mode]="'multiple'">
+          <mefdev-option [Label]="'Ukraine'" [Value]="'Ukraine'"></mefdev-option>
+          <mefdev-option [Label]="'Iceland'" [Value]="'Norway'"></mefdev-option>
+          <mefdev-option [Label]="'Norway'" [Value]="'Iceland'"></mefdev-option>
+        </mefdev-select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label> City </label>
+        <mefdev-select class="w-100">
+          <mefdev-option [Label]="'Kiev'" [Value]="'16-21'"></mefdev-option>
+          <mefdev-option [Label]="'Reykjavik'" [Value]="'21-35'"></mefdev-option>
+          <mefdev-option [Label]="'Oslo'" [Value]="'35-41'"></mefdev-option>
+        </mefdev-select>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="form-group">
+        <label> Age </label>
+        <mefdev-select class="w-100">
+          <mefdev-option [Label]="'16 - 21'" [Value]="'16-21'"></mefdev-option>
+          <mefdev-option [Label]="'21 - 35'" [Value]="'21-35'"></mefdev-option>
+          <mefdev-option [Label]="'35 - 41'" [Value]="'35-41'"></mefdev-option>
+          <mefdev-option [Label]="'41 - 59'" [Value]="'41-59'"></mefdev-option>
+          <mefdev-option [Label]="'59 - 90'" [Value]="'59-90'"></mefdev-option>
+        </mefdev-select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label> Education </label>
+        <mefdev-select class="w-100" [FirstDefault]="true">
+          <mefdev-option [Label]="'Not specified'" [Value]="'Not specified'"></mefdev-option>
+          <mefdev-option [Label]="'Secondary education'" [Value]="'Secondary education'"></mefdev-option>
+          <mefdev-option [Label]="'Bachelor`s degree'" [Value]="'Bachelor`s degree'"></mefdev-option>
+          <mefdev-option [Label]="'Masters degree'" [Value]="'Masters degree'"></mefdev-option>
+          <mefdev-option [Label]="'More than two educations'" [Value]="'More than two educations'"></mefdev-option>
+        </mefdev-select>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div class="form-group col-md-4">
+      <label> Save my values </label>
+      <mefdev-switch class="m-2 d-flex justify-content-start" [Size]="'small'" Color="'primary'"></mefdev-switch>
+    </div>
+    <div class="d-flex form-group col-md-6 m-2">
+      <div class="d-flex flex-column align-items-center mx-3">
+        <label> Male </label>
+        <input type="radio" name="gender" value="male">
+      </div>
+      <div class="d-flex flex-column align-items-center mx-3">
+        <label> Female </label>
+        <input type="radio" name="gender" value="female">
+      </div>
+    </div>
+  </div>
+
+  <ng-template #modal_footer>
+    <button type="button" class="btn btn-danger" (click)="searchControlsExample.hideModal()"> Search</button>
+  </ng-template>
+</mefdev-fill-modal>

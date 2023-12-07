@@ -1,0 +1,359 @@
+<h3 class="p-l-20 p-t-15"> Form control list </h3>
+
+<div>
+
+  <div class="container elements">
+
+    <div class="row">
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Input </p>
+          <p> Simple user input </p>
+          <textarea disabled="true" class="inputExampleTextarea">
+<div class="form-group">
+   <label> Login </label>
+   <input class="form-control">
+</div>
+          </textarea>
+          <div class="form-group float-end">
+            <label> Login </label>
+            <input class="form-control">
+          </div>
+        </div>
+      </mefdev-card-simple>
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Textarea </p>
+          <p> Element for multi-line text input on web pages. </p>
+          <textarea disabled="true" class="textareaExampleContent">
+<div class="form-group">
+   <label> Type your comment </label>
+   <textarea class="form-control"/>
+</div>
+          </textarea>
+        <div class="form-group float-end textareaExampleBlock">
+            <label> Type your comment </label>
+            <textarea class="form-control textAreaExample"></textarea>
+        </div>
+        </div>
+      </mefdev-card-simple>
+    </div>
+
+    <div class="row">
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Datepicker </p>
+          <p> This is a simple calendar for choosing a date </p>
+          <textarea disabled="true" class="datepickerControlExample">
+<div class="form-group d-flex flex-column">
+            <label> Select date </label>
+            <mefdev-datepicker
+                      [lang]="'en'"
+                      [dateFormat]="'dd/MM/yyyy'"
+                      [range] = "{startYear:1900, toYear:300}"
+                      [disabled]="false"
+                      [topOffset]="'20'"
+                      [leftOffset]="'10'">
+            </mefdev-datepicker>
+</div>
+          </textarea>
+          <div class="form-group d-flex flex-column float-end">
+            <label> Select date </label>
+            <mefdev-datepicker
+              [lang]="'en'"
+              [dateFormat]="'dd/MM/yyyy'"
+              [range] = "{startYear:1900, toYear:300}"
+              [disabled]="false"
+              [topOffset]="'20'"
+              [leftOffset]="'10'">
+            </mefdev-datepicker>
+          </div>
+        </div>
+      </mefdev-card-simple>
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Select Common </p>
+          <p> This is common select. Press select menu below. </p>
+          <textarea disabled="true" class="commonSelectExample">
+<div class="form-group d-flex flex-column">
+            <label> Make your choice </label>
+            <mefdev-select
+                  [PlaceHolder]="'PlaceHolder'"
+                  [FirstDefault]="false">
+                <mefdev-option [Label]="'Label 1'" [Value]="'Label 1'"></mefdev-option>
+                <mefdev-option [Label]="'Label 2'" [Value]="'Label 2'"></mefdev-option>
+                <mefdev-option [Label]="'Label 3'" [Value]="'Label 3'"></mefdev-option>
+            </mefdev-select>
+</div>
+          </textarea>
+            <div class="form-group d-flex flex-column float-end">
+              <label> Make your choice </label>
+              <mefdev-select
+                class="float-end"
+                [PlaceHolder]="'PlaceHolder'"
+                [FirstDefault]="false">
+                <mefdev-option [Label]="'Label 1'" [Value]="'Label 1'"></mefdev-option>
+                <mefdev-option [Label]="'Label 2'" [Value]="'Label 2'"></mefdev-option>
+                <mefdev-option [Label]="'Label 3'" [Value]="'Label 3'"></mefdev-option>
+              </mefdev-select>
+            </div>
+          </div>
+      </mefdev-card-simple>
+    </div>
+
+    <div class="row">
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Select Multiple </p>
+          <p> This is multiple select. Press select menu below. </p>
+          <textarea disabled="true" class="multipleSelectExample">
+<div class="form-group d-flex flex-column">
+            <label> Choose several options </label>
+            <mefdev-select
+                  [PlaceHolder]="'Placeholder'"
+                  [Mode]="'multiple'">
+              <mefdev-option [Label]="'Label 1'" [Value]="'Label 1'"></mefdev-option>
+              <mefdev-option [Label]="'Label 2'" [Value]="'Label 2'"></mefdev-option>
+              <mefdev-option [Label]="'Label 3'" [Value]="'Label 3'"></mefdev-option>
+            </mefdev-select>
+</div>
+          </textarea>
+          <div class="form-group d-flex flex-column float-end">
+            <label> Choose several options </label>
+            <mefdev-select
+              [PlaceHolder]="'Placeholder'"
+              [Mode]="'multiple'">
+              <mefdev-option [Label]="'Label 1'" [Value]="'Label 1'"></mefdev-option>
+              <mefdev-option [Label]="'Label 2'" [Value]="'Label 2'"></mefdev-option>
+              <mefdev-option [Label]="'Label 3'" [Value]="'Label 3'"></mefdev-option>
+            </mefdev-select>
+          </div>
+        </div>
+      </mefdev-card-simple>
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Select Combobox </p>
+          <p> This is autocomplete select. Press select menu below. </p>
+          <textarea disabled="true" class="selectComboboxSwitch">
+<div class="form-group d-flex flex-column">
+            <label> Make your choice </label>
+            <mefdev-select
+              [Mode]="'combobox'"
+              [FirstDefault]="true">
+              <mefdev-option [Label]="'Label 1'" [Value]="'Label 1'"></mefdev-option>
+              <mefdev-option [Label]="'Label 2'" [Value]="'Label 2'"></mefdev-option>
+              <mefdev-option [Label]="'Label 3'" [Value]="'Label 3'"></mefdev-option>
+            </mefdev-select>
+</div>
+          </textarea>
+          <div class="form-group d-flex flex-column float-end">
+            <label> Make your choice </label>
+            <mefdev-select
+              [Mode]="'combobox'"
+              [FirstDefault]="true">
+              <mefdev-option [Label]="'Label 1'" [Value]="'Label 1'"></mefdev-option>
+              <mefdev-option [Label]="'Label 2'" [Value]="'Label 2'"></mefdev-option>
+              <mefdev-option [Label]="'Label 3'" [Value]="'Label 3'"></mefdev-option>
+            </mefdev-select>
+          </div>
+        </div>
+      </mefdev-card-simple>
+    </div>
+
+
+    <div class="row">
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Checkbox </p>
+          <p> A checkbox that allows you to select a true or false value </p>
+          <textarea disabled="true" class="checkboxTextareaExample">
+<div class="form-group d-flex flex-column">
+            <label> Enable </label>
+            <input type="checkbox">
+</div>
+          </textarea>
+          <div class="form-group d-flex flex-column float-end">
+            <label> Enable </label>
+            <input type="checkbox">
+          </div>
+        </div>
+      </mefdev-card-simple>
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Common switch </p>
+          <p> Control that allows users to toggle between two states, like an on/off switch. </p>
+          <textarea disabled="true" class="switchControlExample">
+<div class="form-group d-flex flex-column align-items-center">
+     <label> Enable </label>
+     <mefdev-switch Size="'big'" Color="'primary'">
+     </mefdev-switch>
+</div>
+          </textarea>
+          <div class="form-group d-flex flex-column align-items-center float-end">
+            <label> Enable </label>
+            <mefdev-switch Size="'big'" Color="'primary'"></mefdev-switch>
+          </div>
+        </div>
+      </mefdev-card-simple>
+
+    </div>
+
+    <div class="row">
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Size switch </p>
+          <p> Another example of switch but in small size </p>
+          <textarea disabled="true" class="switchControlExample">
+<div class="form-group">
+       <label> Open </label>
+       <mefdev-switch [Size]="'small'" Color="'primary'">
+      </mefdev-switch>
+</div>
+          </textarea>
+          <div class="form-group d-flex flex-column align-items-center float-end">
+            <label> Open? </label>
+            <mefdev-switch
+                [Size]="'small'" Color="'primary'"></mefdev-switch>
+          </div>
+        </div>
+      </mefdev-card-simple>
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Disabled switch </p>
+          <p> Example of a disabled switch </p>
+          <textarea disabled="true" class="switchControlExample">
+<div class="form-group form-group d-flex flex-column">
+       <label> Activate? </label>
+       <mefdev-switch Size="'big'" [Color]="'warning'" Color="'primary'">
+       </mefdev-switch>
+</div>
+          </textarea>
+          <div class="form-group d-flex flex-column float-end">
+            <label> Activate? </label>
+            <mefdev-switch Size="'big'" Color="'primary'" disabled="true"></mefdev-switch>
+          </div>
+        </div>
+      </mefdev-card-simple>
+
+    </div>
+
+
+
+    <div class="row">
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Color switch </p>
+          <p> Example of a switch in a different color   </p>
+          <textarea disabled="true" class="switchControlExample">
+<div class="form-group d-flex flex-column">
+      <label> Create? </label>
+      <mefdev-switch [Color]="'warning'" Size="'big'" Color="'primary'">
+      </mefdev-switch>
+</div>
+          </textarea>
+          <div class="form-group d-flex flex-column float-end">
+            <label> Create? </label>
+            <mefdev-switch [Color]="'warning'" Size="'big'" Color="'primary'"></mefdev-switch>
+          </div>
+        </div>
+      </mefdev-card-simple>
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Enabled input slider </p>
+          <p> A control that will help you choose a value in a certain range </p>
+          <textarea disabled="true" class="sliderControlExample">
+<div>
+          <label class="form-group"> Select a range </label>
+          <mefdev-slider
+              [disabled]="false"
+              [range] = "{min: 1, max: 1000}"
+              [id]="'slider1'">
+          </mefdev-slider>
+</div>
+          </textarea>
+          <label class="form-group"> Select a range </label>
+          <mefdev-slider
+            [disabled]="false"
+            [range] = "{min: 1, max: 1000}"
+            [id]="'slider1'"
+          ></mefdev-slider>
+        </div>
+      </mefdev-card-simple>
+
+    </div>
+
+
+    <div class="row">
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Disabled input slider </p>
+          <p> Another example of a slider, but with disabled inputs </p>
+          <textarea disabled="true" class="sliderControlExample">
+<div>
+          <label class="form-group"> Select a price range </label>
+          <mefdev-slider
+              [disabled]="true"
+              [range] = "{min: 1, max: 1000}"
+              [id]="'slider1'">
+          </mefdev-slider>
+</div>
+          </textarea>
+
+            <label class="form-group"> Select a price range </label>
+            <mefdev-slider
+              [disabled]="true"
+              [range] = "{min: 1, max: 1000}"
+              [id]="'slider1'">
+            </mefdev-slider>
+        </div>
+      </mefdev-card-simple>
+
+      <mefdev-card-simple class="col-md-6">
+        <div class="cardContentStyles">
+          <p class="form-group"> Radio button </p>
+          <p> A control that allows you to select only one option from a collection </p>
+          <textarea disabled="true" class="radioTextAreaExample">
+<div class="d-flex flex-column form-group">
+            <label> Choose your protocol </label>
+            <article class="d-flex">
+              <div class="d-flex flex-column align-items-center mx-3">
+                <label> HTTP </label>
+                <input type="radio" name="protocol" value="HTTP">
+              </div>
+              <div class="d-flex flex-column align-items-center mx-3">
+                <label> HTTPS </label>
+                <input type="radio" name="protocol" value="HTTPS">
+              </div>
+            </article>
+</div>
+          </textarea>
+          <div class="d-flex flex-column form-group float-end">
+            <label> Choose your protocol </label>
+            <article class="d-flex">
+              <div class="d-flex flex-column align-items-center mx-3">
+                <label> HTTP </label>
+                <input type="radio" name="protocol" value="HTTP">
+              </div>
+              <div class="d-flex flex-column align-items-center mx-3">
+                <label> HTTPS </label>
+                <input type="radio" name="protocol" value="HTTPS">
+              </div>
+            </article>
+          </div>
+        </div>
+      </mefdev-card-simple>
+
+    </div>
+
+  </div>
+</div>

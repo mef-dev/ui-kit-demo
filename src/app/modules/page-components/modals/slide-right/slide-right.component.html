@@ -1,0 +1,184 @@
+<h3 class="m-3">slide-right modal</h3>
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-xl-6 col-12 d-flex flex-column row-gap-3">
+      <mefdev-card-simple>
+        <ng-template #card_title>
+          <h4> Show modal example </h4>
+        </ng-template>
+        <button type="button" class="btn btn-success" (click)="slideRight.showModal()">Open</button>
+        <p class="fs-30 p-t-10">Modal window "slide-right". By clicking on the "Show" button, you can see how it
+          works.</p>
+      </mefdev-card-simple>
+
+      <mefdev-card-simple>
+        <ng-template #card_title>
+          <h4> Search modal </h4>
+        </ng-template>
+        <button type="button" class="btn btn-success" (click)="searchSlideRight.showModal()">Open</button>
+        <p class="fs-30 p-t-10">Example: 'slide-right' modal window with search form controls.</p>
+      </mefdev-card-simple>
+    </div>
+
+    <div class="col-xl-6 col-12 d-flex flex-column row-gap-3">
+      <mefdev-card-simple>
+        <ng-template #card_title>
+          <h4> Comment modal </h4>
+        </ng-template>
+        <button type="button" class="btn btn-success" (click)="commentModal.showModal()">Open</button>
+        <p class="fs-30 p-t-10">Another example: 'slide-right' modal window with form controls.</p>
+      </mefdev-card-simple>
+    </div>
+
+  </div>
+</div>
+
+<mefdev-slide-right-modal #slideRight>
+  <ng-template #modal_header>
+    <span class="body-1 w-100">
+      Slide Right modal header
+    </span>
+  </ng-template>
+
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores in illo placeat magni repellendus minima praesentium sapiente eos quas optio ad nisi laboriosam, rerum corrupti consectetur deleniti cupiditate hic? Incidunt!
+  </div>
+  <div class="pt-3">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores in illo placeat magni repellendus minima praesentium sapiente eos quas optio ad nisi laboriosam, rerum corrupti consectetur deleniti cupiditate hic? Incidunt!
+  </div>
+  <div class="pt-3">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores in illo placeat magni repellendus minima praesentium sapiente eos quas optio ad nisi laboriosam, rerum corrupti consectetur deleniti cupiditate hic? Incidunt!
+  </div>
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores in illo placeat magni repellendus minima praesentium sapiente eos quas optio ad nisi laboriosam, rerum corrupti consectetur deleniti cupiditate hic? Incidunt!
+  </div>
+
+  <ng-template #modal_footer>
+    <span class="body-1 w-100">
+      Slide Right modal footer
+    </span>
+  </ng-template>
+</mefdev-slide-right-modal>
+
+
+<mefdev-slide-right-modal #searchSlideRight>
+  <ng-template #modal_header>
+    <nav class="body-1 w-100">
+      Search right modal
+    </nav>
+  </ng-template>
+
+  <div class="w-100">
+
+    <div class="form-group">
+      <label> Title of products </label>
+      <input type="text" class="form-control">
+    </div>
+
+    <div class="w-100 d-flex align-items-center">
+
+      <div class="form-group d-flex flex-column w-50">
+        <label> Manufacturing date </label>
+        <mefdev-datepicker
+          [lang]="'en'"
+          [dateFormat]="'dd/MM/yyyy'"
+          [range]="{startYear:1900, toYear:300}"
+          [disabled]="false"
+          [topOffset]="'20'"
+          [leftOffset]="'10'">
+        </mefdev-datepicker>
+      </div>
+
+      <div class="w-50 d-flex justify-content-center form-group float-end">
+        <div class="d-flex flex-column align-items-center mx-3">
+          <label> In stock </label>
+          <input type="radio" name="available" value="true">
+        </div>
+        <div class="d-flex flex-column align-items-center mx-3">
+          <label> Not available </label>
+          <input type="radio" name="available" value="false">
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-end">
+      <div class="form-group w-50">
+        <label> Category </label>
+        <mefdev-select class="w-100" [Multiple]="true" [FirstDefault]="false">
+          <mefdev-option [Label]="'Electrotics'" [Value]="'Electrotics'"></mefdev-option>
+          <mefdev-option [Label]="'Clothes'" [Value]="'Clothes'"></mefdev-option>
+          <mefdev-option [Label]="'Auto products'" [Value]="'Auto products'"></mefdev-option>
+          <mefdev-option [Label]="'Plumbing'" [Value]="'Plumbing'"></mefdev-option>
+          <mefdev-option [Label]="'Sport'" [Value]="'Sport'"></mefdev-option>
+        </mefdev-select>
+      </div>
+
+      <div class="form-group w-50 d-flex flex-column align-items-center">
+        <label> Only discounts </label>
+        <mefdev-switch [Size]="'small'" Color="'primary'"></mefdev-switch>
+      </div>
+    </div>
+
+    <div>
+      <label class="form-group"> Select a price range </label>
+      <mefdev-slider
+        [disabled]="false"
+        [range] = "{min: 1, max: 100}"
+        [id]="'slider1'">
+      </mefdev-slider>
+    </div>
+
+  </div>
+
+  <ng-template #modal_footer>
+    <footer class="pull-right d-flex column-gap-3">
+      <button class="btn btn-secondary">
+        Clear
+      </button>
+      <button class="btn btn-success">
+        Find
+      </button>
+    </footer>
+  </ng-template>
+</mefdev-slide-right-modal>
+
+
+<mefdev-slide-right-modal #commentModal>
+  <ng-template #modal_header>
+    <nav class="body-1 w-100">
+      Add new comment
+    </nav>
+  </ng-template>
+
+  <main class="w-100">
+    <div class="form-group">
+      <label> Title </label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label> Text </label>
+      <textarea class="form-control textareaControl"></textarea>
+    </div>
+    <div class="form-group">
+      <label> Who to tag (several options are possible) </label>
+      <mefdev-select class="w-100" [Multiple]="true" [FirstDefault]="false">
+        <mefdev-option [Label]="'User №1'" [Value]="'User №1'"></mefdev-option>
+        <mefdev-option [Label]="'User №2'" [Value]="'User №2'"></mefdev-option>
+        <mefdev-option [Label]="'User №3'" [Value]="'User №3'"></mefdev-option>
+      </mefdev-select>
+    </div>
+
+  </main>
+
+  <ng-template #modal_footer>
+    <footer class="w-100 d-flex justify-content-between align-items-center">
+      <div class="form-group pull-left d-flex flex-column align-items-center">
+        <label> Notify people </label>
+        <mefdev-switch [Size]="'small'" Color="'primary'"></mefdev-switch>
+      </div>
+      <button class="btn btn-success pull-right"> Send </button>
+    </footer>
+  </ng-template>
+</mefdev-slide-right-modal>

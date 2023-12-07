@@ -1,0 +1,39 @@
+.selectSwitchSelect {
+  width: 231px;
+}
+
+.openExecutorButton {
+  margin-left: 15px;
+}
+
+textarea {
+  resize: none;
+}
+
+.mainViewContent {
+
+  .footerButtons {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 17px;
+    column-gap: 12px;
+
+    button {
+      display: flex;
+      align-items: center;
+      column-gap: 11px;
+    }
+  }
+
+}
+
+.rightViewContent {
+
+  ::ng-deep mefdev-slide-right-modal {
+    .dialog {
+      padding: 0 !important;
+    }
+  }
+
+  padding-bottom: 30px;
+}

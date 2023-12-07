@@ -5,64 +5,53 @@
             <span class="fs-5 p-b-15">MefDev UI Kit Examples</span>
         </a>
         <hr>
-
-        <li><a [routerLink]="'/app/typography'">Typography</a></li>
+        <li><a class="form">Controls</a>
+            <ul style="display: flex; flex-direction: column; list-style-type: none;">
+                <li><a [routerLink]="'controls/typography'">typography</a></li>
+                <li><a [routerLink]="'controls/colors'"    >colors</a></li>
+                <li><a [routerLink]="'controls/slider'"    >slider</a></li>
+                <li><a [routerLink]="'controls/select'"    >select</a></li>
+                <li><a [routerLink]="'controls/switch'"    >switch</a></li>
+                <li><a [routerLink]="'controls/buttons'"   >buttons</a></li>
+                <li><a [routerLink]="'controls/list'"> controls list </a> </li>
+            </ul>
+        </li>
         <hr>
 
         <li><a class="form">Page components</a>
             <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                <li><a [routerLink]="'/app/select'">Select</a></li>
-                <li><a [routerLink]="'/app/switch'">Switch</a></li>
-                <li><a [routerLink]="'/app/buttons'">Buttons</a></li>
-                <li><a [routerLink]="'/app/tabset'">Tabset</a></li>
+                <li><a [routerLink]="'page_components/tabset'">tabset</a></li>
+
+                <li><a [routerLink]="'page_components/card/card'"            >card</a></li>
+                <li><a [routerLink]="'page_components/card/card_simple'">card-simple</a></li>
+                <li><a [routerLink]="'page_components/card/card_long'"  >card-long</a></li>
+                <li><a [routerLink]="'page_components/collapse'">collapse</a></li>
+
+                <li><a [routerLink]="'page_components/modals/fill'"       >fill</a></li>
+                <!-- <li><a [routerLink]="'/app/modals/right-filter'">right-filter</a></li> -->
+                <li><a [routerLink]="'page_components/modals/slide_right'">slide-right</a></li>
+                <li><a [routerLink]="'page_components/modals/slide_up'"   >slide-up</a></li>
             </ul>
             <hr>
         </li>
-
-        <li><a >Cards</a>
-            <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                <li><a [routerLink]="'/app/card'"            >card</a></li>
-                <li><a [routerLink]="'/app/card/card-simple'">card-simple</a></li>
-                <li><a [routerLink]="'/app/card/card-long'"  >card-long</a></li>
-            </ul>
-            <hr>
-        </li>
-
-        <li><a >Collapse</a>
-            <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                <li><a [routerLink]="'/app/collapse'">collapse</a></li>
-            </ul>
-            <hr>
-        </li>
-
-            <li><a >Modals</a>
-                <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                    <li><a [routerLink]="'/app/modals/fill'"       >fill</a></li>
-                    <!-- <li><a [routerLink]="'/app/modals/right-filter'">right-filter</a></li> -->
-                    <li><a [routerLink]="'/app/modals/slide-right'">slide-right</a></li>
-                    <li><a [routerLink]="'/app/modals/slide-up'"   >slide-up</a></li>
-                </ul>
-                <hr>
-            </li>
-
         <li><a>Page layouts</a>
             <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                <li><a [routerLink]="'/app/page-layouts/central-page'">central Page</a></li>
-                <li><a [routerLink]="'/app/page-layouts/menage-page'" >menage Page</a></li>
-                <li><a [routerLink]="'/app/page-layouts/profile'"     >profile</a></li>
-                <li><a [routerLink]="'/app/page-layouts/table-page'"  >table Page</a></li>
+                <li><a [routerLink]="'page_layouts/central_page'">central Page</a></li>
+                <li><a [routerLink]="'page_layouts/manage_page'" >menage Page</a></li>
+                <li><a [routerLink]="'page_layouts/profile'"     >profile</a></li>
+                <li><a [routerLink]="'page_layouts/table_page'"  >table Page</a></li>
             </ul>
             <hr>
         </li>
 
         <li><a>Utils</a>
             <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                <li><a [routerLink]="'/app/utils/filtered-field'">filtered field</a></li>
-                <li><a [routerLink]="'/app/utils/help-block'"    >help block</a></li>
+                <li><a [routerLink]="'utils/filtered_field'">filtered field</a></li>
+                <li><a [routerLink]="'utils/help_block'"    >help block</a></li>
+                <li><a [routerLink]="'utils/datepicker'"    >datepicker</a></li>
+                <li><a [routerLink]="'utils/main_executor'"> main executor </a></li>
             </ul>
             <hr>
         </li>
-        <li></li>
-
     </ul>
 </nav>

@@ -1,0 +1,15 @@
+.card-row {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.row {
+  row-gap: 13px;
+}
+
+.textAreaControl {
+  resize: none;
+  overflow: hidden;
+  width: 100%;
+}

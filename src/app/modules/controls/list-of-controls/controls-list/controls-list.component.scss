@@ -1,0 +1,74 @@
+@mixin generalTextareaStyles($height) {
+  width: 100%;
+  overflow: hidden;
+  resize: none;
+  height: $height;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  row-gap: 21px;
+
+  .row {
+    row-gap: 21px;
+
+    .cardContentStyles {
+      border-radius: 10px;
+
+      .inputExampleTextarea,
+      .textareaExampleContent {
+        @include generalTextareaStyles(105px);
+      }
+
+      .datepickerControlExample,
+      .commonSelectExample {
+        @include generalTextareaStyles(245px);
+      }
+
+      .multipleSelectExample,
+      .selectComboboxSwitch {
+        @include generalTextareaStyles(235px);
+      }
+
+      .checkboxTextareaExample {
+        @include generalTextareaStyles(105px);
+      }
+
+      .checkboxControlExample {
+        @include generalTextareaStyles(115px)
+      }
+
+      .switchControlExample {
+        @include generalTextareaStyles(115px)
+      }
+
+      .sliderControlExample {
+        @include generalTextareaStyles(185px);
+      }
+
+      .radioTextAreaExample {
+        @include generalTextareaStyles(275px);
+      }
+
+      .textareaExampleBlock {
+        width: 50%;
+
+        .textAreaExample {
+          width: 100%;
+          resize: none;
+          overflow: hidden;
+        }
+      }
+
+      mefdev-select {
+        width: 200px;
+        margin-top: 9px;
+      }
+
+      mefdev-switch {
+        margin-top: 11px;
+      }
+    }
+  }
+}

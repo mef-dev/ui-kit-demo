@@ -1,0 +1,28 @@
+.row {
+  row-gap: 15px;
+}
+
+@mixin generalTextareaStyles($height) {
+  height: $height;
+  width: 100%;
+  overflow: hidden;
+  resize: none;
+}
+
+.textareaControl {
+  resize: none;
+  height: 75px;
+  overflow: hidden;
+}
+
+mefdev-collapse {
+  cursor: pointer;
+
+  .searchTextareaExample {
+    @include generalTextareaStyles(1300px);
+  }
+
+  .createTextareaExample {
+    @include generalTextareaStyles(1295px);
+  }
+}

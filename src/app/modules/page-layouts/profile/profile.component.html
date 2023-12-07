@@ -1,66 +1,64 @@
 <h3 class="p-l-20 p-t-15">Profile</h3>
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <mefdev-profile
-        [img]="'assets/imgs/store/Frame 521.png'"
-        name="Profile Name"
-        shortDescription="description"
-        [header]="header"
-        [circleImg]="'assets/imgs/store/Frame 521.png'"
-      >
-        <ng-template #first_colum>
-          <p class="body-2">First column</p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Reprehenderit, maxime quas? Neque architecto quidem illum, tempore
-          similique ullam quam id.
-        </ng-template>
-        <ng-template #second_column> second_colum </ng-template>
-        <ng-template #footer>
-          <p class="body-2">Footer</p>
-        </ng-template>
-      </mefdev-profile>
-    </div>
+<div class="row">
+  <div class="col-md-12">
+    <mefdev-profile
+      [img]="'assets/imgs/store/Frame 521.png'"
+      name="Profile Name"
+      shortDescription="description"
+      [header]="header"
+      [circleImg]="'assets/imgs/store/Frame 521.png'"
+    >
+      <ng-template #first_colum>
+        <p class="body-2">First column</p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Reprehenderit, maxime quas? Neque architecto quidem illum, tempore
+        similique ullam quam id.
+      </ng-template>
+      <ng-template #second_column> second_colum </ng-template>
+      <ng-template #footer>
+        <p class="body-2">Footer</p>
+      </ng-template>
+    </mefdev-profile>
   </div>
+</div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <mefdev-profile
-        [img]="'assets/imgs/store/Frame 521.png'"
-        name="Profile Name"
-        shortDescription="description"
-        [header]="header"
-        [circleImg]="'assets/imgs/store/Frame 521.png'"
-      >
-        <ng-template #first_colum>
-          <p class="body-2">First column</p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-          Reprehenderit, maxime quas? Neque architecto quidem illum, tempore
-          similique ullam quam id.
-        </ng-template>
-        <ng-template #second_column> second_colum </ng-template>
-        <ng-template #footer>
-          <mefdev-tabset
-            tabAnimation="slide-left"
-            Type="simple"
-            ShowPagination="true"
-          >
-            <mefdev-tab>
-              <ng-template #TabHeading>
-                {{ "Description" }}
-              </ng-template>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus sapiente quisquam iusto perferendis! Delectus fuga, reprehenderit voluptate ab a porro placeat iste, magni veritatis, fugit quod cupiditate suscipit tenetur minus!
-            </mefdev-tab>
-            <mefdev-tab>
-              <ng-template #TabHeading>
-                {{ "Dependencies" }}
-              </ng-template>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae doloribus ea fuga dolores at iusto, non expedita quasi consectetur laboriosam pariatur reprehenderit sapiente quae soluta dolorem est, consequatur, sunt nemo.
-            </mefdev-tab>
-          </mefdev-tabset>
-        </ng-template>
-      </mefdev-profile>
-    </div>
+<div class="row">
+  <div class="col-md-12">
+    <mefdev-profile
+      [img]="'assets/imgs/store/Frame 521.png'"
+      name="Profile Name"
+      shortDescription="description"
+      [header]="header"
+      [circleImg]="'assets/imgs/store/Frame 521.png'"
+    >
+      <ng-template #first_colum>
+        <p class="body-2">First column</p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Reprehenderit, maxime quas? Neque architecto quidem illum, tempore
+        similique ullam quam id.
+      </ng-template>
+      <ng-template #second_column> second_colum </ng-template>
+      <ng-template #footer>
+        <mefdev-tabset
+          tabAnimation="slide-left"
+          Type="simple"
+          ShowPagination="true"
+        >
+          <mefdev-tab>
+            <ng-template #TabHeading>
+              {{ "Description" }}
+            </ng-template>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Temporibus sapiente quisquam iusto perferendis! Delectus fuga, reprehenderit voluptate ab a porro placeat iste, magni veritatis, fugit quod cupiditate suscipit tenetur minus!
+          </mefdev-tab>
+          <mefdev-tab>
+            <ng-template #TabHeading>
+              {{ "Dependencies" }}
+            </ng-template>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae doloribus ea fuga dolores at iusto, non expedita quasi consectetur laboriosam pariatur reprehenderit sapiente quae soluta dolorem est, consequatur, sunt nemo.
+          </mefdev-tab>
+        </mefdev-tabset>
+      </ng-template>
+    </mefdev-profile>
   </div>
 </div>
