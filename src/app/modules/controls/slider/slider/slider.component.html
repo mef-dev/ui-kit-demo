@@ -1,0 +1,34 @@
+<h3 class="p-l-20 p-t-15">Slider</h3>
+<div class="row">
+  <mefdev-card-simple class="col-md-6">
+    <label class="form-group">Enable Inputs</label>
+    <mefdev-slider
+      [disabled]="false"
+      [range]="{min: 1, max: 1000}"
+      (valueChange)="onChildValueChange($event)"
+      [id]="'slider1'"
+    ></mefdev-slider>
+  </mefdev-card-simple>
+
+  <mefdev-card-simple class="col-md-6">
+    <label class="form-group">Disable Inputs</label>
+    <mefdev-slider
+      [disabled]="true"
+      [range]="{min: 1, max: 1000}"
+      (valueChange)="onChildValueChange($event)"
+      [id]="'slider2'"
+    ></mefdev-slider>
+  </mefdev-card-simple>
+
+  <mefdev-card-simple class="col-md-12 p-t-30">
+    <label class="form-group">Full size input</label>
+    <mefdev-slider
+      [disabled]="false"
+      [range]="{min: 1, max: 10000}"
+      (valueChange)="onChildValueChange($event)"
+      [id]="'slider3'"
+    ></mefdev-slider>
+  </mefdev-card-simple>
+
+
+</div>

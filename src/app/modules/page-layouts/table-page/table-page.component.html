@@ -1,54 +1,52 @@
 <h3 class="p-l-20 p-t-15">table-page</h3>
 
-<div class="container">
-  <div class="row">
+<div class="row">
+  <div>
     <div>
-      <div>
-        <p>
-          You can get more information about ngx-datatable by following the
-          link:
-        </p>
-        <a
-          href="        
-      https://www.npmjs.com/package/@swimlane/ngx-datatable
-      "
-        >
-          https://www.npmjs.com/package/@swimlane/ngx-datatable
-        </a>
-      </div>
-    </div>
-    <mefdev-table-page class="col-md-11">
-      <ng-template #filter_colum>
-        <button class="btn btn-primary float-end">Button</button>
-      </ng-template>
-      <ngx-datatable
-        class="table table-condensed"
-        [rows]="data"
-        columnMode="force"
-        [headerHeight]="43"
-        [footerHeight]="0"
-        [rowHeight]="44"
-        [limit]="5"
+      <p>
+        You can get more information about ngx-datatable by following the
+        link:
+      </p>
+      <a
+        href="
+    https://www.npmjs.com/package/@swimlane/ngx-datatable
+    "
       >
-        <ngx-datatable-column
-          name="type"
-          prop="type"
-          cellClass="d-flex align-items-center"
-        >
-        </ngx-datatable-column>
-        <ngx-datatable-column
-          name="Username"
-          prop="username"
-          cellClass="d-flex align-items-center"
-        >
-        </ngx-datatable-column>
-        <ngx-datatable-column
-          name="system"
-          prop="system"
-          cellClass="d-flex align-items-center"
-        >
-        </ngx-datatable-column>
-      </ngx-datatable>
-    </mefdev-table-page>
+        https://www.npmjs.com/package/@swimlane/ngx-datatable
+      </a>
+    </div>
   </div>
+  <mefdev-table-page class="col-md-11">
+    <ng-template #filter_colum>
+      <button class="btn btn-primary float-end">Button</button>
+    </ng-template>
+    <ngx-datatable
+      class="table table-condensed"
+      [rows]="data"
+      columnMode="force"
+      [headerHeight]="43"
+      [footerHeight]="0"
+      [rowHeight]="44"
+      [limit]="5"
+    >
+      <ngx-datatable-column
+        name="type"
+        prop="type"
+        cellClass="d-flex align-items-center"
+      >
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="Username"
+        prop="username"
+        cellClass="d-flex align-items-center"
+      >
+      </ngx-datatable-column>
+      <ngx-datatable-column
+        name="system"
+        prop="system"
+        cellClass="d-flex align-items-center"
+      >
+      </ngx-datatable-column>
+    </ngx-datatable>
+  </mefdev-table-page>
 </div>

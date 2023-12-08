@@ -1,0 +1,159 @@
+<h3 class="p-l-20 p-t-15">Datepicker</h3>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6 col-12 d-flex flex-column row-gap-3">
+
+      <mefdev-card-simple>
+
+        <ng-template #card_title>
+          <h4> Simple datepicker </h4>
+        </ng-template>
+
+        <mefdev-datepicker
+          [labelContentText]="'Choose your date'"
+          [lang]="'en'"
+          [dateFormat]="'dd/MM/yyyy'"
+          [range]="{startYear:1900, toYear:300}"
+          [disabled]="false"
+          (dateChanged)="onDateChanged($event)"
+          [topOffset]="'20'"
+          [leftOffset]="'10'">
+        </mefdev-datepicker>
+
+        <p class="fs-30 p-t-10"> Using datepicker you can choose a certain date from the calendar or enter the date you
+          want yourself </p>
+
+      </mefdev-card-simple>
+
+      <mefdev-card-simple>
+
+        <ng-template #card_title>
+          <h4> Create example </h4>
+        </ng-template>
+
+        <article>
+
+          <div class="col-7">
+
+            <mefdev-datepicker
+              [labelContentText]="'Choose a release date'"
+              [lang]="'en'"
+              [dateFormat]="'dd/MM/yyyy'"
+              [range]="{startYear:1900, toYear:300}"
+              [disabled]="false"
+              (dateChanged)="onDateChanged($event)"
+              [topOffset]="'20'"
+              [leftOffset]="'10'">
+            </mefdev-datepicker>
+
+            <div class="form-group">
+              <label> Title </label>
+              <input class="form-control">
+            </div>
+
+            <div class="form-group">
+              <label> Type your comment </label>
+              <textarea class="form-control textareaControl"></textarea>
+            </div>
+
+            <div class="form-group d-flex flex-column">
+              <label> Choose who to tag </label>
+              <mefdev-select
+                [PlaceHolder]="'Placeholder'"
+                [Mode]="'multiple'">
+                <mefdev-option [Label]="'User 1'" [Value]="'User 1'"></mefdev-option>
+                <mefdev-option [Label]="'User 2'" [Value]="'User 2'"></mefdev-option>
+                <mefdev-option [Label]="'User 3'" [Value]="'User 3'"></mefdev-option>
+              </mefdev-select>
+            </div>
+            <div class="d-flex flex-column align-items-center form-group">
+              <label> Notify all people </label>
+              <article class="d-flex">
+                <div class="d-flex flex-column align-items-center mx-3">
+                  <label> Yes </label>
+                  <input type="radio" name="notify" value="true">
+                </div>
+                <div class="d-flex flex-column align-items-center mx-3">
+                  <label> No </label>
+                  <input type="radio" name="notify" value="false">
+                </div>
+              </article>
+            </div>
+          </div>
+
+        </article>
+
+      </mefdev-card-simple>
+
+    </div>
+
+    <div class="col-xl-6 col-12 d-flex flex-column row-gap-3">
+
+      <mefdev-card-simple>
+
+        <ng-template #card_title>
+          <h4> Search example </h4>
+        </ng-template>
+
+        <article>
+
+          <div>
+            <label class="form-group"> Choose a price range </label>
+            <mefdev-slider
+              [disabled]="false"
+              [range]="{min: 1, max: 1000}"
+              [id]="'slider1'">
+            </mefdev-slider>
+          </div>
+
+          <article class="col-8">
+
+            <div class="d-flex column-gap-5">
+
+              <div class="form-group d-flex flex-column">
+                <label> Date of manufacture </label>
+                <mefdev-datepicker
+                  [lang]="'en'"
+                  [dateFormat]="'dd/MM/yyyy'"
+                  [range]="{startYear:1900, toYear:300}"
+                  [disabled]="false"
+                  [topOffset]="'20'"
+                  [leftOffset]="'10'">
+                </mefdev-datepicker>
+              </div>
+
+              <div class="form-group d-flex flex-column align-items-center">
+                <label> Out of stock </label>
+                <mefdev-switch [Size]="'small'" Color="'primary'">
+                </mefdev-switch>
+              </div>
+
+            </div>
+
+            <div class="form-group col-8">
+              <label> Title of product </label>
+              <input class="form-control">
+            </div>
+
+            <div class="form-group d-flex flex-column">
+              <label> Choose a store </label>
+              <mefdev-select
+                [PlaceHolder]="'PlaceHolder'"
+                [FirstDefault]="false">
+                <mefdev-option [Label]="'Joom'" [Value]="'Joom'"></mefdev-option>
+                <mefdev-option [Label]="'Amazon'" [Value]="'Amazon'"></mefdev-option>
+                <mefdev-option [Label]="'Prom'" [Value]="'Prom'"></mefdev-option>
+              </mefdev-select>
+            </div>
+
+          </article>
+        </article>
+
+      </mefdev-card-simple>
+
+    </div>
+
+
+  </div>
+</div>

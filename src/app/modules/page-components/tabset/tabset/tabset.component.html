@@ -1,0 +1,163 @@
+<h3 class="p-l-20 p-t-15">tabset</h3>
+
+<mefdev-tabset tabAnimation="slide-left" Type="simple" ShowPagination="true">
+  <mefdev-tab>
+    <ng-template #TabHeading>
+      Search
+    </ng-template>
+    <p #description> Search </p>
+    <div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label> Title of product </label>
+              <input class="form-control" type="text">
+            </div>
+            <div class="form-group">
+              <label> Select category </label>
+              <mefdev-select [FirstDefault]="true" class="w-100">
+                <mefdev-option [Label]="'Laptops'" [Value]="'3306'"></mefdev-option>
+                <mefdev-option [Label]="'Smartphones'" [Value]="'Smartphones'"></mefdev-option>
+                <mefdev-option [Label]="'Clothes'" [Value]="'Clothes'"></mefdev-option>
+              </mefdev-select>
+            </div>
+            <div class="form-group d-flex flex-column">
+              <label> Select brand </label>
+              <mefdev-select
+                [PlaceHolder]="'Placeholder'"
+                [Mode]="'multiple'">
+                <mefdev-option [Label]="'Asus'" [Value]="'Asus'"></mefdev-option>
+                <mefdev-option [Label]="'Samsung'" [Value]="'Dell'"></mefdev-option>
+                <mefdev-option [Label]="'Puma'" [Value]="'Puma'"></mefdev-option>
+              </mefdev-select>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label> Seller </label>
+              <input class="form-control" type="email">
+            </div>
+            <article>
+              <label class="form-group"> Select a price range </label>
+              <mefdev-slider
+                [disabled]="false"
+                [range]="{min: 1, max: 1000}"
+                [id]="'slider1'">
+              </mefdev-slider>
+            </article>
+
+          </div>
+
+          <div class="col-md-4 d-flex flex-column justify-content-evenly align-items-center">
+            <div class="d-flex flex-column align-items-center form-group">
+              <label> Free product delivery </label>
+              <article class="d-flex">
+                <div class="d-flex flex-column align-items-center mx-3">
+                  <label> Yes </label>
+                  <input type="radio" name="delivery" value="true">
+                </div>
+                <div class="d-flex flex-column align-items-center mx-3">
+                  <label> No </label>
+                  <input type="radio" name="delivery" value="false">
+                </div>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <button class="btn btn-success"> Search</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mefdev-tab>
+
+  <mefdev-tab style="background-color: #0a53be">
+    <ng-template #TabHeading>
+      Create
+    </ng-template>
+    <p #description>Description</p>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label> Create </label>
+            <input class="form-control" type="text">
+          </div>
+          <div class="form-group">
+            <label> Select priority </label>
+            <mefdev-select [FirstDefault]="true" class="w-100">
+              <mefdev-option [Label]="'Low'" [Value]="'Low'"></mefdev-option>
+              <mefdev-option [Label]="'Medium'" [Value]="'Medium'"></mefdev-option>
+              <mefdev-option [Label]="'High'" [Value]="'High'"></mefdev-option>
+            </mefdev-select>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="form-group">
+            <label> Add description </label>
+            <textarea placeholder="Type..." class="form-control textareatControl"></textarea>
+          </div>
+        </div>
+
+        <div class="col-md-4 form-group d-flex flex-column align-items-center">
+
+          <div class="col-md-4 d-flex justify-content-between align-items-center flex-wrap w-50">
+            <div class="form-group d-flex flex-column align-items-center">
+              <label> Notify all </label>
+              <mefdev-switch [Size]="'small'" Color="'primary'"></mefdev-switch>
+            </div>
+
+            <div class="form-group d-flex flex-column align-items-center">
+              <label> Open </label>
+              <mefdev-switch [Size]="'small'" Color="'primary'"></mefdev-switch>
+            </div>
+
+          </div>
+
+          <div class="form-group mt-4">
+            <button class="btn btn-success"> Create </button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </mefdev-tab>
+
+  <mefdev-tab>
+    <ng-template #TabHeading>
+      Text
+    </ng-template>
+    <p #description>Description</p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores quasi repudiandae saepe ratione, adipisci, amet
+      consequatur doloremque voluptatibus tenetur rerum vero doloribus atque. Laudantium corporis hic neque doloribus,
+      earum et, voluptas velit blanditiis eaque error temporibus numquam? Deserunt animi fugiat eligendi repellat sequi
+      dicta modi iste deleniti beatae, nobis, illum alias placeat facere harum ipsum officiis at nulla, assumenda
+      consectetur culpa amet sunt voluptas! Vero neque nesciunt eos corrupti ipsam et dolorem saepe enim dolores rem!
+      Consequatur asperiores vitae, similique repellat quibusdam aspernatur hic ex dolorem, totam ad soluta praesentium
+      architecto incidunt quod voluptas ratione rerum, inventore itaque corporis magni?
+    </p>
+    <p>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus reprehenderit tenetur architecto magni velit
+      dolorum non, nulla possimus quia veniam perferendis neque facilis debitis praesentium ex cumque veritatis at
+      voluptatibus molestias deleniti exercitationem officia recusandae, itaque quaerat? Distinctio fugiat quam, qui
+      numquam, aperiam atque, soluta provident ipsum esse mollitia obcaecati. Tempora minus vitae quidem corporis
+      obcaecati quia vel eius temporibus qui, totam libero! Corrupti eveniet alias ex labore atque, et aut nemo optio,
+      soluta harum a facilis, impedit commodi minus laudantium dignissimos minima aliquam magni? Unde et sed sequi
+      consequatur hic quia velit obcaecati mollitia odio modi! Voluptatem quod veniam accusantium, debitis mollitia
+      praesentium! Minus explicabo ipsam assumenda tenetur ea libero ex, est blanditiis nulla repellat accusamus a sequi
+      et repellendus non praesentium laborum possimus necessitatibus officiis. Perferendis, necessitatibus temporibus
+      veritatis debitis, suscipit totam sapiente, impedit soluta nisi reiciendis mollitia quo labore harum consectetur
+      vel minus voluptatibus ipsa officia quibusdam nulla fuga esse deleniti? Eum iure eius voluptatum asperiores
+      adipisci. Possimus incidunt culpa, nobis alias, veritatis qui voluptatibus officiis id eaque autem, vel blanditiis
+      inventore sed nam minima fugiat velit sit atque dolor. Quis cumque dignissimos natus ducimus fugit. Deserunt odio
+      omnis similique debitis, veniam unde quaerat eveniet quidem nesciunt?
+    </p>
+  </mefdev-tab>
+
+</mefdev-tabset>

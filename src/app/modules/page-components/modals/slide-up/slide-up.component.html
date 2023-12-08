@@ -1,0 +1,184 @@
+<h3 class="m-3">slide-up modal</h3>
+
+<!--<div class="modal-row">-->
+<div class="container">
+  <div class="row">
+    <div class="col-xl-6 col-12 d-flex flex-column row-gap-3">
+      <mefdev-card-simple>
+          <ng-template #card_title>
+            <h4>Show modal</h4>
+          </ng-template>
+          <button type="button" class="btn btn-success" (click)="mdSlideUp.showModal()">Show</button>
+          <p class="fs-30 p-t-10">Modal window "slide-up". By clicking on the "Show" button, you can see how it works.</p>
+        </mefdev-card-simple>
+
+      <mefdev-card-simple>
+        <ng-template #card_title>
+          <h4> Sign up controls modal example</h4>
+        </ng-template>
+        <button type="button" class="btn btn-success" (click)="signupControlsExample.showModal()">Open</button>
+        <p class="fs-30 p-t-10">Modal window "slide-up". By clicking on the "Open" button, you can see an example of how to
+          use different controls in a modal window .</p>
+
+      </mefdev-card-simple>
+    </div>
+
+    <div class="col-xl-6 col-12 d-flex flex-column row-gap-3">
+      <mefdev-card-simple >
+          <ng-template #card_title>
+            <h4> Sign in controls example </h4>
+          </ng-template>
+          <button type="button" class="btn btn-success" (click)="loginControlsExample.showModal()">Open</button>
+          <p class="fs-30 p-t-10"> Example of modal window with controls to sign in to system </p>
+        </mefdev-card-simple>
+
+      <mefdev-card-simple >
+        <ng-template #card_title>
+          <h4> Send message controls modal example</h4>
+        </ng-template>
+        <button type="button" class="btn btn-success" (click)="sendMessageModalControlsExample.showModal()">Open</button>
+        <p class="fs-30 p-t-10"> Another example of modal window with controls for sending a message </p>
+
+      </mefdev-card-simple>
+    </div>
+
+  </div>
+</div>
+
+
+<mefdev-slide-up-modal #mdSlideUp>
+  <ng-template #modal_header>
+    <h3>Modal header</h3>
+  </ng-template>
+
+  <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus repudiandae aspernatur cumque optio corrupti
+    itaque deserunt animi blanditiis accusamus voluptates.
+  </div>
+
+  <ng-template #modal_footer>
+    <button type="button" class="btn btn-danger" (click)="mdSlideUp.hideModal()">Close</button>
+  </ng-template>
+
+</mefdev-slide-up-modal>
+
+
+<mefdev-slide-up-modal #signupControlsExample>
+
+  <ng-template #modal_header>
+    <h3> Sign up </h3>
+  </ng-template>
+
+  <ng-template #modal_footer>
+    <button class="btn btn-success"> Create </button>
+  </ng-template>
+
+  <div class="container modal-body">
+    <div class="row">
+      <div class="col-md-6">
+
+        <div class="form-group">
+          <label> Name </label>
+          <input class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label> Email </label>
+          <input class="form-control" type="email">
+        </div>
+        <div class="form-group">
+            <label> Select your role </label>
+            <mefdev-select class="w-100" [FirstDefault]="false">
+              <mefdev-option [Label]="'Developer'" [Value]="'Developer'"></mefdev-option>
+              <mefdev-option [Label]="'Root'" [Value]="'Root'"></mefdev-option>
+              <mefdev-option [Label]="'Admin'" [Value]="'Admin'"></mefdev-option>
+            </mefdev-select>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label> Surname </label>
+          <input class="form-control" type="text">
+        </div>
+        <div class="form-group">
+          <label> Password </label>
+          <input class="form-control" type="password">
+        </div>
+        <div class="form-group">
+          <label> Enable notifications </label>
+          <mefdev-switch
+            class="m-2 d-flex justify-content-start"
+            [Size]="'small'"
+            Color="'primary'">
+          </mefdev-switch>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</mefdev-slide-up-modal>
+
+
+<mefdev-slide-up-modal #loginControlsExample>
+
+  <ng-template #modal_header>
+    <h3> Sign in </h3>
+  </ng-template>
+
+  <ng-template #modal_footer>
+    <button class="btn btn-success"> Login </button>
+  </ng-template>
+
+  <div class="container modal-body">
+
+    <div class="row">
+      <div class="form-group">
+        <label> Login </label>
+        <input class="form-control" type="text">
+      </div>
+      <div class="form-group">
+        <label> Password </label>
+        <input class="form-control" type="password">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group d-flex flex-column align-items-start">
+        <label> Stay signed in </label>
+        <input type="checkbox">
+      </div>
+    </div>
+
+  </div>
+
+</mefdev-slide-up-modal>
+
+
+<mefdev-slide-up-modal #sendMessageModalControlsExample>
+  <ng-template #modal_header>
+    <h3> Send new message </h3>
+  </ng-template>
+
+  <ng-template #modal_footer>
+    <button class="btn btn-success"> Send</button>
+  </ng-template>
+
+  <div class="container modal-body">
+
+    <div class="form-group">
+      <label> Message </label>
+      <textarea class="form-control textareaControl"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label> Choose who to send the message to (several options are possible) </label>
+      <mefdev-select class="w-100" [Multiple]="true" [FirstDefault]="false">
+        <mefdev-option [Label]="'User №1'" [Value]="'User №1'"></mefdev-option>
+        <mefdev-option [Label]="'User №2'" [Value]="'User №2'"></mefdev-option>
+        <mefdev-option [Label]="'User №3'" [Value]="'User №3'"></mefdev-option>
+      </mefdev-select>
+    </div>
+
+  </div>
+
+</mefdev-slide-up-modal>

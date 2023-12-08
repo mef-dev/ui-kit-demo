@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ContentChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-manage-page',

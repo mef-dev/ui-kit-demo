@@ -1,0 +1,734 @@
+<h3 class="p-l-20 p-t-15"> Step by step executors </h3>
+<p class="body-4 p-l-20 p-t-15"> Here are some examples of step-by-step executors </p>
+
+<div class="form-group">
+  <p class="form-group"> Select your view </p>
+  <mefdev-select [(ngModel)]="selectedView"
+                 (ngModelChange)="onViewChange($event)"
+                 class="selectSwitchSelect">
+    <mefdev-option *ngFor="let view of views" [Value]="view" [Label]="view"></mefdev-option>
+  </mefdev-select>
+  <button *ngIf="selectedView === 'modal'"
+          (click)="openModalExecutor()"
+          class="btn btn-primary openExecutorButton"> Open modal executor
+  </button>
+  <button *ngIf="selectedView === 'right'"
+          (click)="openRightExecutor()"
+          class="btn btn-primary openExecutorButton"> Open right executor
+  </button>
+</div>
+
+<!-- Regular view -->
+
+<mefdev-step-executor *ngIf="selectedView === 'regular'"
+                      [show]="selectedView === 'regular'"
+                      [view]="'regular'"
+                      class="mainViewContent"
+                      #mainExecutor>
+
+    <ng-template #title> Step header </ng-template>
+    <ng-template #description> Description of the st ep-by-step process in two raw. </ng-template>
+
+    <mefdev-executor-page
+            [title]="'Description of situation 1'"
+            [isActive]="mainExecutor.activePageInd === 0"
+            [isCompleted]="mainExecutor.activePageInd >= 0" class="container">
+          <div class="row">
+              <div class="leftPart col-lg-7">
+                <h2> Step header </h2>
+                <p class="body-4"> Another part of our priority is adding protection for children while using the
+                  internet.
+                  We encourage
+                  parents and guardians to observe, participate in, and/or monitor and guide their online activity.
+                  MaxiBestOf does not knowingly collect any Personal Identifiable Information from children under the
+                  age
+                  of
+                  13. If you think that your child provided this kind of information on our website, we strongly
+                  encourage
+                  you
+                  to contact us immediately and we will do our best efforts to promptly remove such information from our
+                  records
+                </p>
+                <p class="body-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias amet commodi dolor facere harum
+                  ipsam laborum minus molestiae nemo obcaecati, quam sit ullam! Laborum non perspiciatis qui recusandae
+                  reprehenderit.
+                </p>
+            </div>
+            <div class="rightPart col-lg-5">
+                <div class="form-group">
+                  <label> Email address </label>
+                  <input type="text" class="form-control" placeholder="Placeholder">
+                </div>
+                <div class="form-group">
+                  <label> Password </label>
+                  <input type="text" class="form-control" placeholder="Placeholder">
+                </div>
+                <div class="form-group d-flex flex-column">
+                  <label> Select your role </label>
+                  <mefdev-select
+                    [Mode]="'combobox'"
+                    [FirstDefault]="true">
+                    <mefdev-option [Label]="'Admin'" [Value]="'Admin'"></mefdev-option>
+                    <mefdev-option [Label]="'Root'" [Value]="'Root'"></mefdev-option>
+                    <mefdev-option [Label]="'Developer'" [Value]="'Developer'"></mefdev-option>
+                  </mefdev-select>
+                </div>
+            </div>
+          </div>
+    </mefdev-executor-page>
+
+  <mefdev-executor-page
+    [title]="'Description of situation 2'"
+    [isActive]="mainExecutor.activePageInd === 1"
+    [isCompleted]="mainExecutor.activePageInd >= 1" class="container">
+
+    <div class="row">
+      <div class="col-lg-7">
+
+        <h2> Step two </h2>
+        <p class="body-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+        </p>
+      </div>
+      <div class="col-lg-5">
+        <div class="form-group">
+          <label> Basic info </label>
+          <textarea class="form-control textarea"></textarea>
+        </div>
+        <div class="form-group">
+          <label> Notes </label>
+          <textarea class="form-control textarea"></textarea>
+        </div>
+      </div>
+    </div>
+
+  </mefdev-executor-page>
+
+  <mefdev-executor-page
+    [title]="'Description of situation 3'"
+    [isActive]="mainExecutor.activePageInd === 2"
+    [isCompleted]="mainExecutor.activePageInd >= 2" class="containter">
+
+    <div class="row">
+
+      <div class="col-lg-7">
+
+        <h2> Step three </h2>
+        <p class="body-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+        </p>
+      </div>
+
+      <div class="col-lg-5 mt-1">
+
+        <article class="d-flex justify-content-between">
+          <div class="form-group d-flex flex-column">
+            <label> Select date </label>
+            <mefdev-datepicker
+              [lang]="'en'"
+              [dateFormat]="'dd/MM/yyyy'"
+              [range] = "{startYear:1900, toYear:300}"
+              [disabled]="false"
+              [topOffset]="'20'"
+              [leftOffset]="'10'">
+            </mefdev-datepicker>
+          </div>
+
+          <div class="form-group d-flex flex-column align-items-center">
+            <label> Every two month </label>
+            <mefdev-switch [Size]="'small'" Color="'primary'">
+            </mefdev-switch>
+          </div>
+
+        </article>
+
+        <div>
+          <label class="form-group"> Select a memory range </label>
+          <mefdev-slider
+            [disabled]="false"
+            [range] = "{min: 1, max: 1000}"
+            [id]="'slider1'">
+          </mefdev-slider>
+        </div>
+
+        <div class="d-flex flex-column form-group align-items-center">
+          <label> Choose your protocol </label>
+          <article class="d-flex">
+            <div class="d-flex flex-column align-items-center mx-3">
+              <label> HTTP </label>
+              <input type="radio" name="protocol" value="HTTP">
+            </div>
+            <div class="d-flex flex-column align-items-center mx-3">
+              <label> HTTPS </label>
+              <input type="radio" name="protocol" value="HTTPS">
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </mefdev-executor-page>
+
+  <mefdev-executor-page
+    [title]="'Description of situation 4'"
+    [isActive]="mainExecutor.activePageInd === 3"
+    [isCompleted]="mainExecutor.activePageInd >= 3" class="container">
+
+    <div class="row">
+      <article class="col-lg-7">
+        <h2> Step four </h2>
+        <p class="body-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+          enim et eveniet
+          excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+        </p>
+      </article>
+
+      <article class="col-lg-4">
+        <div class="form-group d-flex flex-column">
+          <label> Choose your brand </label>
+          <mefdev-select
+            [PlaceHolder]="'Placeholder'"
+            [Mode]="'multiple'">
+            <mefdev-option [Label]="'Asus'" [Value]="'Asus'"></mefdev-option>
+            <mefdev-option [Label]="'Lenovo'" [Value]="'Lenovo'"></mefdev-option>
+            <mefdev-option [Label]="'Dell'" [Value]="'Dell'"></mefdev-option>
+          </mefdev-select>
+        </div>
+
+        <div class="form-group">
+          <label> Name of device </label>
+          <input class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label> Description of device </label>
+          <textarea class="form-control"></textarea>
+        </div>
+
+
+        <div class="d-flex justify-content-between">
+          <div class="form-group d-flex flex-column float-start">
+            <label> Enable </label>
+            <input type="checkbox">
+          </div>
+
+          <div class="form-group d-flex flex-column align-items-center">
+            <label> Contact with brand </label>
+            <mefdev-switch Size="'big'" Color="'primary'">
+            </mefdev-switch>
+          </div>
+        </div>
+
+      </article>
+
+    </div>
+  </mefdev-executor-page>
+
+  <mefdev-executor-page
+    [title]="'Description of situation 5'"
+    [isActive]="mainExecutor.activePageInd === 4"
+    [isCompleted]="mainExecutor.activePageInd >= 4" class="container">
+
+    <div class="row">
+      <article class="col-lg-7">
+
+          <h2> Step five </h2>
+          <p class="body-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+            enim et eveniet
+            excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+            enim et eveniet
+            excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+            enim et eveniet
+            excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+            enim et eveniet
+            excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+            enim et eveniet
+            excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+          </p>
+      </article>
+
+      <article class="col-lg-5">
+        <div class="form-group d-flex flex-column">
+          <label> Select your continent </label>
+          <mefdev-select
+            [Mode]="'combobox'"
+            [FirstDefault]="true">
+            <mefdev-option [Label]="'Europe'" [Value]="'Europe'"></mefdev-option>
+            <mefdev-option [Label]="'Asia'" [Value]="'Asia'"></mefdev-option>
+            <mefdev-option [Label]="'Africa'" [Value]="'Africa'"></mefdev-option>
+            <mefdev-option [Label]="'North America'" [Value]="'North America'"></mefdev-option>
+            <mefdev-option [Label]="'South America'" [Value]="'South America'"></mefdev-option>
+            <mefdev-option [Label]="'Australia'" [Value]="'Australia'"></mefdev-option>
+          </mefdev-select>
+        </div>
+
+        <div class="form-group d-flex flex-column">
+          <div class="form-group d-flex flex-column">
+            <label> Select your country </label>
+            <mefdev-select [Mode]="'combobox'" [FirstDefault]="true">
+              <mefdev-option [Label]="'Ukraine'" [Value]="'Ukraine'"></mefdev-option>
+              <mefdev-option [Label]="'China'" [Value]="'China'"></mefdev-option>
+              <mefdev-option [Label]="'Egypt'" [Value]="'Egypt'"></mefdev-option>
+              <mefdev-option [Label]="'United States'" [Value]="'United States'"></mefdev-option>
+              <mefdev-option [Label]="'Brazil'" [Value]="'Brazil'"></mefdev-option>
+              <mefdev-option [Label]="'Australia'" [Value]="'Australia'"></mefdev-option>
+            </mefdev-select>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-around">
+
+          <div class="d-flex flex-column">
+            <div class="form-group d-flex flex-column align-items-center">
+              <label> Activate </label>
+              <mefdev-switch Size="'big'" Color="'primary'"></mefdev-switch>
+            </div>
+          </div>
+
+          <div class="d-flex flex-column">
+            <div class="form-group d-flex flex-column align-items-center">
+              <label> Send feedback </label>
+              <mefdev-switch Size="'big'" Color="'primary'"></mefdev-switch>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column align-items-center form-group">
+          <label> Send propositions in my region </label>
+          <article class="d-flex">
+            <div class="d-flex flex-column align-items-center mx-3">
+              <label> Yes </label>
+              <input type="radio" name="propositions" value="true">
+            </div>
+            <div class="d-flex flex-column align-items-center mx-3">
+              <label> No </label>
+              <input type="radio" name="propositions" value="false">
+            </div>
+          </article>
+        </div>
+
+      </article>
+
+    </div>
+  </mefdev-executor-page>
+
+  <mefdev-executor-page
+    [title]="'Description of situation 6'"
+    [isActive]="mainExecutor.activePageInd === 5"
+    [isCompleted]="mainExecutor.activePageInd >= 5">
+    <h2> Step six - finish </h2>
+    <p class="body-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+      enim et eveniet
+      excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+      enim et eveniet
+      excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+      enim et eveniet
+      excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+      enim et eveniet
+      excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+      enim et eveniet
+      excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+      enim et eveniet
+      excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+      enim et eveniet
+      excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquam deserunt dicta doloribus
+      enim et eveniet
+      excepturi explicabo hic, illo ipsum magnam, maxime nisi nulla optio porro quis quos ut.
+    </p>
+  </mefdev-executor-page>
+
+    <ng-template #footer>
+        <div class="footerButtons">
+            <button class="btn btn-primary" (click)="mainExecutor.prev()" [disabled]="mainExecutor.activePageInd === 0">
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                Previous
+            </button>
+            <button class="btn btn-success" (click)="mainExecutor.next()" [disabled]="mainExecutor.nextBtnIsDisabled()"> Next
+                <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            </button>
+            <button class="btn btn-secondary" (click)="mainExecutor.cancel()"> Cancel
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+    </ng-template>
+</mefdev-step-executor>
+
+<!-- Modal view -->
+
+<mefdev-step-executor [show]="isModalStepExecutorOpened"
+                      (modalStepExecutorStateChange)="getModalExecutorStateValue($event)"
+                      [view]="'modal'"
+                      #modalExecutor>
+
+  <ng-template #title> Order a service </ng-template>
+  <ng-template #description> Here we can arrange your service. </ng-template>
+
+  <mefdev-executor-page
+    [title]="'Description of situation 1'"
+    [isActive]="modalExecutor.activePageInd === 0"
+    [isCompleted]="modalExecutor.activePageInd >= 0" class="container">
+    <div class="row">
+
+      <div class="col-7">
+        <h2> Step one </h2>
+        <p class="body-4 text">
+          Another part of our priority is adding protection for children while using the internet. We encourage
+          parents and guardians to observe, participate in, and/or monitor and guide their online activity. <br>
+          MaxiBestOf does not knowingly collect any Personal Identifiable Information from children under the
+          age of 13. If you think that your child provided this kind of information on our website, we strongly
+          encourage you to contact us immediately and we will do our best efforts to promptly remove such
+          information from our records.
+        </p>
+      </div>
+
+      <div class="col-5 d-flex flex-column">
+        <div class="form-group d-flex flex-column w-100">
+          <label> Name and surname </label>
+          <input type="text" class="form-control">
+        </div>
+        <div class="form-group d-flex flex-column w-100">
+          <label> Choose service </label>
+          <mefdev-select
+            class="w-100"
+            [PlaceHolder]="'PlaceHolder'"
+            [FirstDefault]="false">
+            <mefdev-option [Label]="'Software development'" [Value]="'Software development'"></mefdev-option>
+            <mefdev-option [Label]="'SEO Support'" [Value]="'SEO Support'"></mefdev-option>
+            <mefdev-option [Label]="'Cloud services'" [Value]="'Cloud services'"></mefdev-option>
+          </mefdev-select>
+        </div>
+        <div class="form-group d-flex flex-column w-100">
+          <label> Select your OS </label>
+          <mefdev-select
+            class="w-100"
+            [PlaceHolder]="'PlaceHolder'"
+            [Mode]="'multiple'">
+            <mefdev-option [Label]="'Windows'" [Value]="'Windows'"></mefdev-option>
+            <mefdev-option [Label]="'MacOs'" [Value]="'MacOs'"></mefdev-option>
+            <mefdev-option [Label]="'Linux'" [Value]="'Linux'"></mefdev-option>
+          </mefdev-select>
+        </div>
+      </div>
+
+    </div>
+  </mefdev-executor-page>
+
+  <mefdev-executor-page
+    [title]="'Description of situation 2'"
+    [isActive]="modalExecutor.activePageInd === 1"
+    [isCompleted]="modalExecutor.activePageInd >= 1" class="container">
+    <div class="row">
+
+      <div class="col-7">
+        <h2> Step two </h2>
+        <p class="body-4 text">
+          Another part of our priority is adding protection for children while using the internet. We encourage
+          parents and guardians to observe, participate in, and/or monitor and guide their online activity. <br>
+          MaxiBestOf does not knowingly collect any Personal Identifiable Information from children under the age
+          of 13. If you think that your child provided this kind of information on our website, we strongly
+          encourage you to contact us immediately and we will do our best efforts to promptly remove such
+          information from our records.
+        </p>
+      </div>
+
+      <div class="col-5 d-flex flex-column justify-content-center">
+        <div>
+          <label class="form-group"> Select the service price range </label>
+          <mefdev-slider
+            [disabled]="false"
+            [range] = "{min: 1, max: 1000}"
+            [id]="'slider1'">
+          </mefdev-slider>
+        </div>
+
+        <div class="d-flex justify-content-around">
+          <div class="form-group d-flex flex-column align-items-center">
+            <label> Save data </label>
+            <input type="checkbox">
+          </div>
+
+          <div class="form-group d-flex flex-column align-items-center">
+            <label> Show services </label>
+            <input type="checkbox">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </mefdev-executor-page>
+
+  <mefdev-executor-page
+    [title]="'Description of situation 3'"
+    [isActive]="modalExecutor.activePageInd === 2"
+    [isCompleted]="modalExecutor.activePageInd >= 2" class="container">
+    <div class="row">
+
+      <div class="col-7">
+        <h2> Step three </h2>
+        <p class="body-4 text">
+          Another part of our priority is adding protection for children while using the internet. We encourage
+          parents and guardians to observe, participate in, and/or monitor and guide their online activity. <br>
+          MaxiBestOf does not knowingly collect any Personal Identifiable Information from children under the age
+          of 13. If you think that your child provided this kind of information on our website, we strongly
+          encourage you to contact us immediately and we will do our best efforts to promptly remove such
+          information from our records.
+        </p>
+      </div>
+
+      <div class="col-5 d-flex flex-column">
+        <div class="d-flex flex-column align-items-center form-group">
+          <label> Choose your currency </label>
+          <article class="d-flex">
+            <div class="d-flex flex-column align-items-center mx-3">
+              <label> UAH </label>
+              <input type="radio" name="currency" value="UAH">
+            </div>
+            <div class="d-flex flex-column align-items-center mx-3">
+              <label> USD </label>
+              <input type="radio" name="currency" value="USD">
+            </div>
+            <div class="d-flex flex-column align-items-center mx-3">
+              <label> EUR </label>
+              <input type="radio" name="currency" value="EUR">
+            </div>
+          </article>
+        </div>
+        <div class="form-group">
+          <label> Your wishes </label>
+          <textarea class="form-control" style="resize: none"></textarea>
+        </div>
+
+        <div class="d-flex justify-content-around">
+          <div class="form-group d-flex flex-column align-items-center">
+            <label> Subscribe </label>
+            <mefdev-switch [Size]="'small'" Color="'primary'">
+            </mefdev-switch>
+          </div>
+          <div class="form-group d-flex flex-column align-items-center">
+            <label> Send mail </label>
+            <mefdev-switch [Size]="'small'" Color="'primary'">
+            </mefdev-switch>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+  </mefdev-executor-page>
+
+  <ng-template #footer>
+    <button class="btn btn-primary"
+            (click)="modalExecutor.prev()"
+            [disabled]="modalExecutor.activePageInd === 0">
+      Previous
+    </button>
+    <button class="btn btn-success" (click)="modalExecutor.next()" [disabled]="modalExecutor.nextBtnIsDisabled()">
+      Next
+    </button>
+    <button class="btn btn-secondary" (click)="modalExecutor.cancel()"> Cancel</button>
+  </ng-template>
+</mefdev-step-executor>
+
+<!-- Right view -->
+
+<mefdev-step-executor *ngIf="selectedView === 'right'"
+                      [show]="isRightStepExecutorOpened && selectedView === 'right'"
+                      (rightStepExecutorStateChange)="getRightExecutorStateValue($event)"
+                      [view]="'right'"
+                      class="rightViewContent"
+                      #rightExecutor>
+  <ng-template #title> Process header </ng-template>
+  <ng-template #description> Description of the st ep-by-step process in two raw. </ng-template>
+
+  <mefdev-executor-page
+    class="firstRightContent"
+    [isActive]="rightExecutor.activePageInd === 0"
+    [isCompleted]="rightExecutor.activePageInd >= 0">
+    <article class="firstRightContent">
+
+      <h1 class="h5"> Right Step header </h1>
+
+      <div class="form-group">
+        <label> Full name </label>
+        <input class="form-control" type="email">
+      </div>
+
+      <div class="form-group d-flex flex-column">
+        <label> Select your role </label>
+        <mefdev-select
+          [PlaceHolder]="'PlaceHolder'"
+          [FirstDefault]="false">
+          <mefdev-option [Label]="'User'" [Value]="'User'"></mefdev-option>
+          <mefdev-option [Label]="'Developer'" [Value]="'Developer'"></mefdev-option>
+          <mefdev-option [Label]="'Admin'" [Value]="'Admin'"></mefdev-option>
+        </mefdev-select>
+      </div>
+
+      <div class="form-group">
+        <label> Email </label>
+        <input class="form-control" type="email">
+      </div>
+
+      <div class="form-group">
+        <label> Password </label>
+        <input class="form-control" type="password">
+      </div>
+
+      <div class="d-flex flex-column align-items-center form-group">
+        <article class="d-flex">
+          <div class="d-flex flex-column align-items-center mx-3">
+            <label> Male </label>
+            <input type="radio" name="gender" value="Male">
+          </div>
+          <div class="d-flex flex-column align-items-center mx-3">
+            <label> Female </label>
+            <input type="radio" name="gender" value="Female">
+          </div>
+        </article>
+      </div>
+
+    </article>
+  </mefdev-executor-page>
+
+  <mefdev-executor-page
+    [isActive]="rightExecutor.activePageInd === 1"
+    [isCompleted]="rightExecutor.activePageInd >= 1">
+    <h1 class="h5"> Step two - additional info </h1>
+
+    <div class="form-group">
+      <label> Tell about yourself </label>
+      <textarea class="form-control"></textarea>
+    </div>
+
+    <article class="d-flex justify-content-between">
+
+      <div class="form-group d-flex flex-column">
+        <label> Your birthday </label>
+        <mefdev-datepicker
+          [lang]="'en'"
+          [dateFormat]="'dd/MM/yyyy'"
+          [range]="{startYear:1900, toYear:300}"
+          [disabled]="false"
+          [topOffset]="'20'"
+          [leftOffset]="'10'">
+        </mefdev-datepicker>
+      </div>
+
+      <div class="form-group d-flex flex-column align-items-center">
+        <label> Show in profile </label>
+        <mefdev-switch [Size]="'small'" Color="'primary'">
+        </mefdev-switch>
+      </div>
+    </article>
+
+    <div>
+      <label class="form-group"> Select a service price range </label>
+      <mefdev-slider
+        [disabled]="false"
+        [range] = "{min: 1, max: 1000}"
+        [id]="'slider1'">
+      </mefdev-slider>
+    </div>
+
+
+  </mefdev-executor-page>
+
+  <mefdev-executor-page
+    [isActive]="rightExecutor.activePageInd === 2"
+    [isCompleted]="rightExecutor.activePageInd >= 2">
+    <h1 class="h5"> Personal info </h1>
+    <div class="form-group d-flex flex-column">
+      <label> Choose your hobbies </label>
+      <mefdev-select
+        [PlaceHolder]="'Placeholder'"
+        [Mode]="'multiple'">
+        <mefdev-option [Label]="'Programming'" [Value]="'Programming'"></mefdev-option>
+        <mefdev-option [Label]="'Football'" [Value]="'Football'"></mefdev-option>
+        <mefdev-option [Label]="'Fishing'" [Value]="'Fishing'"></mefdev-option>
+      </mefdev-select>
+    </div>
+
+    <div class="form-group d-flex flex-column">
+      <label> Select color scheme </label>
+      <mefdev-select
+        [Mode]="'combobox'"
+        [FirstDefault]="true">
+        <mefdev-option [Label]="'Gray'" [Value]="'Gray'"></mefdev-option>
+        <mefdev-option [Label]="'White'" [Value]="'White'"></mefdev-option>
+        <mefdev-option [Label]="'Black'" [Value]="'Black'"></mefdev-option>
+      </mefdev-select>
+    </div>
+
+    <div class="d-flex justify-content-evenly">
+
+      <div class="form-group d-flex flex-column align-items-center">
+        <label> Send mail </label>
+        <mefdev-switch [Size]="'small'" Color="'primary'">
+        </mefdev-switch>
+      </div>
+
+      <div class="form-group d-flex flex-column align-items-center">
+        <label> Login to system </label>
+        <input type="checkbox">
+      </div>
+    </div>
+
+  </mefdev-executor-page>
+
+  <ng-template #footer>
+    <button class="btn btn-primary"
+            (click)="rightExecutor.prev()"
+            [disabled]="rightExecutor.activePageInd === 0">
+      Previous
+    </button>
+    <button class="btn btn-success" (click)="rightExecutor.next()" [disabled]="rightExecutor.nextBtnIsDisabled()">
+      Next
+    </button>
+  </ng-template>
+
+</mefdev-step-executor>
