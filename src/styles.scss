@@ -1,3 +1,60 @@
+@use "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/core.scss" as *;
+@use "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/vars.scss" as *;
+
+
+/* світла тема */
+:root {
+  --bg: #{$White};
+  --bg-nav: #{$Light-Gray-3};
+  --bg-nav-hover: #{$Dark-Gray-3};
+  --bg-nav-active: #{$Light-Gray-1};
+  --text: #{$Black-Color};
+  --border: #{$Dark-Gray-2};
+}
+
+/* темна тема */
+:root.theme-dark {
+  --bg: #{$Dark-Gray-1};
+  --bg-nav: #{$Dark-Gray-2};
+  --bg-nav-hover: #{$Light-Gray-1};
+  --bg-nav-active: #{$Dark-Gray-3};
+  --text: #{$White};
+  --border: #{$Dark-Gray-2};
+}
+
+/* плавні переходи кольорів */
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  transition: background-color .2s ease, color .2s ease;
+}
+
 .navbar {
   align-items: flex-start;
+}
+
+pre{
+  background-color: var(--bg) !important;
+}
+
+.ace-clouds .ace_meta {
+  color: #569cd6;
+}
+
+.ace-clouds .ace_entity.ace_other.ace_attribute-name {
+  color: #88cdf7;
+}
+
+.ace-clouds .ace_string {
+  color: #ce9178;
+}
+
+.ace-clouds .ace_keyword {
+  color: #28b446;
+}
+
+
+.ace_editor,
+.ace_editor * {
+  user-select: text !important;
 }

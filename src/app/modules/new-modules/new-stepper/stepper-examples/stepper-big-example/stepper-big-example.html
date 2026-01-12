@@ -1,0 +1,93 @@
+<md-stepper [linear]="isLinear" #stepper>
+    <md-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" class="w-100">
+            <ng-template mdStepLabel>Fill out your name</ng-template>
+
+            <div class="form-group col-md-6 bg-gray w-100">
+                <label> Name </label>
+                <input
+                    [(ngModel)]="Name"
+                    placeholder="Last name, First name"
+                    formControlName="firstCtrl"
+                    class="form-control"
+                    type="text"
+                    required
+                />
+            </div>
+        </form>
+    </md-step>
+    <md-step [stepControl]="secondFormGroup" label="Fill out your address">
+        <form [formGroup]="secondFormGroup">
+            <div class="form-group col-md-6 bg-gray">
+                <label> Address </label>
+                <input
+                    [(ngModel)]="Address"
+                    formControlName="secondCtrl"
+                    placeholder="Ex. 1 Main St, New York, NY"
+                    class="form-control"
+                    required
+                />
+            </div>
+        </form>
+    </md-step>
+    <md-step label="Date of your Birth">
+        <form [formGroup]="thirdFormGroup" label="Date of your Birth">
+            <div class="form-group col-md-6 bg-gray">
+                <label>Enter a date of your birth</label>
+                <input class="form-control" type="date" placeholder="Enter your date" required />
+            </div>
+        </form>
+    </md-step>
+    <md-step>
+        <ng-template mdStepLabel>Check is it right</ng-template>
+        <div class="bg-gray">
+            <p class="form-group">Your name is: {{ Name }}</p>
+            <p class="form-group">Your address is: {{ Address }}</p>
+        </div>
+    </md-step>
+    <md-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template mdStepLabel>Fill out your name</ng-template>
+
+            <div class="form-group col-md-6">
+                <label> Name </label>
+                <input
+                    [(ngModel)]="Name"
+                    placeholder="Last name, First name"
+                    formControlName="firstCtrl"
+                    class="form-control"
+                    type="text"
+                    required
+                />
+            </div>
+        </form>
+    </md-step>
+    <md-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template mdStepLabel>Fill out your name</ng-template>
+
+            <div class="form-group col-md-6">
+                <label> Name </label>
+                <input
+                    [(ngModel)]="Name"
+                    placeholder="Last name, First name"
+                    formControlName="firstCtrl"
+                    class="form-control"
+                    type="text"
+                    required
+                />
+            </div>
+        </form>
+    </md-step>
+    <md-step>
+        <ng-template mdStepLabel>Job is finished</ng-template>
+        <p>You are now done.</p>
+    </md-step>
+    <ng-template mdStepFooter>
+        <div class="d-flex gap-1 pt-3">
+            <button mdStepperPrevious class="btn btn-primary">Back</button>
+            <button mdStepperNext class="btn btn-primary">Next</button>
+            <button (click)="stepper.reset()" class="btn btn-primary">Reset</button>
+        </div>
+    </ng-template>
+</md-stepper>

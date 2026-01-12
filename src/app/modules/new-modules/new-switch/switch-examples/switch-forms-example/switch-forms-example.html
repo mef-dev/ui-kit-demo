@@ -1,0 +1,25 @@
+<h4>Switch using a simple NgModel.</h4>
+
+<md-switch [(ngModel)]="isChecked">Switch Checked: {{isChecked}}</md-switch>
+
+<p>Switch inside of a Template-driven form</p>
+
+<form class="example-form" #form="ngForm" (ngSubmit)="alertFormValues(form.form)">
+
+  <md-switch ngModel name="enableWifi">Enable Wifi</md-switch>
+  <md-switch ngModel name="acceptTerms" required>Accept Terms of Service</md-switch>
+
+  <button class="btn btn-primary" type="submit">Save Settings</button>
+</form>
+
+<h4 class="mt-3">Switch inside of a Reactive form</h4>
+
+<form class="example-form" [formGroup]="formGroup" (ngSubmit)="alertFormValues(formGroup)" ngNativeValidate>
+
+  <md-switch formControlName="enableWifi">Enable Wifi</md-switch>
+  <md-switch formControlName="acceptTerms">Accept Terms of Service</md-switch>
+
+  <p>Form Group Status: {{formGroup.status}}</p>
+
+  <button class="btn btn-primary" type="submit">Save Settings</button>
+</form>

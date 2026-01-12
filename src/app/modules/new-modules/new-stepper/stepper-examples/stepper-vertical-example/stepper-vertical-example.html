@@ -1,0 +1,37 @@
+<button class="btn btn-primary" (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+</button>
+<md-stepper orientation="vertical" [linear]="isLinear" #stepper>
+    <md-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+            <ng-template mdStepLabel>Fill out your name</ng-template>
+            <input class="form-control" placeholder="Last name, First name" formControlName="firstCtrl" required />
+            <div class="mt-2 d-flex gap-2">
+                <button class="btn btn-primary" mdStepperNext>Next</button>
+            </div>
+        </form>
+    </md-step>
+    <md-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+            <ng-template mdStepLabel>Fill out your address</ng-template>
+            <input
+                class="form-control"
+                formControlName="secondCtrl"
+                placeholder="Ex. 1 Main St, New York, NY"
+                required
+            />
+            <div class="mt-2 d-flex gap-2">
+                <button class="btn btn-primary" mdStepperPrevious>Back</button>
+                <button class="btn btn-primary" mdStepperNext>Next</button>
+            </div>
+        </form>
+    </md-step>
+    <md-step>
+        <ng-template mdStepLabel>Done</ng-template>
+        <p>You are now done.</p>
+        <div class="mt-2 d-flex gap-2">
+            <button class="btn btn-primary" mdStepperPrevious>Back</button>
+            <button class="btn btn-primary" (click)="stepper.reset()">Reset</button>
+        </div>
+    </md-step>
+</md-stepper>

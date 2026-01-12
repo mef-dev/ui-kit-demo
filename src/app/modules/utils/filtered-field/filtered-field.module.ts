@@ -7,9 +7,6 @@ import { MefDevFilteredFieldModule } from '@natec/mef-dev-ui-kit';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { MefDevTabsModule } from '@natec/mef-dev-ui-kit';
 
-
-
-
 @NgModule({
   declarations: [],
   imports: [

@@ -1,57 +1,30 @@
+<nav class="sidenav navbar navbar-light bg-light" aria-label="Primary">
+    <a class="sidenav__brand text-decoration-none" [routerLink]="brand.to">
+        <span class="fs-5">{{ brand.label }}</span>
+    </a>
+    <div class="p-2">
+        <md-switch class="align-middle" [ngModel]="showDeprecated()" (ngModelChange)="showDeprecated.set($event)" />
+        <span class="ps-1 align-middle">Show deprecated</span>
+    </div>
+    <hr class="sidenav__divider" />
 
-<nav class="navbar navbar-light bg-light b-color-Dark-Gray-1 whiteUl m-0" style="width: 270px; font-size: 17px; position: sticky; height: 100vh; overflow-y: auto;">
-    <ul  style="display: flex; flex-direction: column; list-style-type: none; color: white;">
-        <a [routerLink]="'/app/home'" class="d-flex align-items-center p-t-15 text-white text-decoration-none">
-            <span class="fs-5 p-b-15">MefDev UI Kit Examples</span>
-        </a>
-        <hr>
-        <li><a class="form">Controls</a>
-            <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                <li><a [routerLink]="'controls/typography'">typography</a></li>
-                <li><a [routerLink]="'controls/colors'"    >colors</a></li>
-                <li><a [routerLink]="'controls/slider'"    >slider</a></li>
-                <li><a [routerLink]="'controls/select'"    >select</a></li>
-                <li><a [routerLink]="'controls/switch'"    >switch</a></li>
-                <li><a [routerLink]="'controls/buttons'"   >buttons</a></li>
-                <li><a [routerLink]="'controls/list'"> controls list </a> </li>
+    <ul class="sidenav__list" role="list">
+        <li class="sidenav__section" *ngFor="let sec of sectionsWithFilteredLinks(); trackBy: trackSection">
+            <span class="sidenav__title">{{ sec.title }}</span>
+
+            <ul class="sidenav__sublist" role="list">
+                <li *ngFor="let link of sec.links; trackBy: trackLink">
+                    <a
+                        class="sidenav__link text-decoration-none"
+                        [routerLink]="link.to"
+                        routerLinkActive="is-active"
+                        [routerLinkActiveOptions]="{ exact: true }"
+                        >{{ link.label }}</a
+                    >
+                </li>
             </ul>
-        </li>
-        <hr>
 
-        <li><a class="form">Page components</a>
-            <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                <li><a [routerLink]="'page_components/tabset'">tabset</a></li>
-
-                <li><a [routerLink]="'page_components/card/card'"            >card</a></li>
-                <li><a [routerLink]="'page_components/card/card_simple'">card-simple</a></li>
-                <li><a [routerLink]="'page_components/card/card_long'"  >card-long</a></li>
-                <li><a [routerLink]="'page_components/collapse'">collapse</a></li>
-
-                <li><a [routerLink]="'page_components/modals/fill'"       >fill</a></li>
-                <!-- <li><a [routerLink]="'/app/modals/right-filter'">right-filter</a></li> -->
-                <li><a [routerLink]="'page_components/modals/slide_right'">slide-right</a></li>
-                <li><a [routerLink]="'page_components/modals/slide_up'"   >slide-up</a></li>
-            </ul>
-            <hr>
-        </li>
-        <li><a>Page layouts</a>
-            <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                <li><a [routerLink]="'page_layouts/central_page'">central Page</a></li>
-                <li><a [routerLink]="'page_layouts/manage_page'" >menage Page</a></li>
-                <li><a [routerLink]="'page_layouts/profile'"     >profile</a></li>
-                <li><a [routerLink]="'page_layouts/table_page'"  >table Page</a></li>
-            </ul>
-            <hr>
-        </li>
-
-        <li><a>Utils</a>
-            <ul style="display: flex; flex-direction: column; list-style-type: none;">
-                <li><a [routerLink]="'utils/filtered_field'">filtered field</a></li>
-                <li><a [routerLink]="'utils/help_block'"    >help block</a></li>
-                <li><a [routerLink]="'utils/datepicker'"    >datepicker</a></li>
-                <li><a [routerLink]="'utils/main_executor'"> main executor </a></li>
-            </ul>
-            <hr>
+            <hr class="sidenav__divider" />
         </li>
     </ul>
 </nav>

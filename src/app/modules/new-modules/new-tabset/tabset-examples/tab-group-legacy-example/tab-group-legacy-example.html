@@ -1,0 +1,185 @@
+<md-tab-group
+    md-stretch-tabs="false"
+    [isLegacyMode]="true"
+    [legacySize]="'small'"
+    [hideInkBar]="true"
+    [(selectedIndex)]="tabIndex"
+    class="mt-2"
+>
+    <md-tab label="First">Content 1</md-tab>
+    <md-tab label="Second">Content 2</md-tab>
+    <md-tab label="Third">Content 3</md-tab>
+</md-tab-group>
+
+<md-tab-group
+    [isLegacyMode]="true"
+    [legacySize]="'medium'"
+    [hideInkBar]="true"
+    [(selectedIndex)]="tabIndex"
+    class="mt-2"
+>
+    <md-tab label="Examples">
+        <md-tab-group [(selectedIndex)]="secondTabIndex" class="mt-2">
+            <md-tab label="Search">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label> Title of product </label>
+                                <input class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label> Select category </label>
+                                <md-select placeholder="Select a category" class="w-100">
+                                    <md-option-group [label]="'Categories'">
+                                        <md-option [value]="'Books'">Books</md-option>
+                                        <md-option [value]="'Electronics'">Electronics</md-option>
+                                        <md-option [value]="'Clothes'">Clothes</md-option>
+                                    </md-option-group>
+                                </md-select>
+                            </div>
+                            <div class="form-group d-flex flex-column">
+                                <label> Select brand </label>
+                                <md-select placeholder="Select a brand" multiple class="w-100">
+                                    <md-option-group [label]="'Brands'">
+                                        <md-option [value]="'Asus'">Asus</md-option>
+                                        <md-option [value]="'Samsung'">Samsung</md-option>
+                                        <md-option [value]="'Puma'">Puma</md-option>
+                                    </md-option-group>
+                                </md-select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 d-flex flex-column justify-content-evenly align-items-center">
+                            <div class="d-flex flex-column align-items-center form-group">
+                                <label> Free product delivery </label>
+                                <article class="d-flex">
+                                    <div class="d-flex flex-column align-items-center mx-3">
+                                        <label> Yes </label>
+                                        <input type="radio" name="delivery" value="true" />
+                                    </div>
+                                    <div class="d-flex flex-column align-items-center mx-3">
+                                        <label> No </label>
+                                        <input type="radio" name="delivery" value="false" />
+                                    </div>
+                                </article>
+                            </div>
+                            <div class="col-md-4 d-flex flex-column justify-content-evenly align-items-center">
+                                <button class="btn btn-success">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </md-tab>
+
+            <md-tab label="Create">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label> Create </label>
+                                <input class="form-control" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label> Select priority </label>
+                                <md-select placeholder="Select priority" class="w-100">
+                                    <md-option-group [label]="'Priority'">
+                                        <md-option [value]="'Low'"> Low </md-option>
+                                        <md-option [value]="'Medium'"> Medium </md-option>
+                                        <md-option [value]="'High'"> High </md-option>
+                                    </md-option-group>
+                                </md-select>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label> Add description </label>
+                                <textarea
+                                    placeholder="Type..."
+                                    class="form-control textareatControl"
+                                    rows="5"
+                                    style="min-height: 120px"
+                                ></textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4 d-flex flex-column align-items-center mt-4">
+                            <div class="d-flex justify-content-center gap-4">
+                                <div class="text-center">
+                                    <label class="d-block mb-1">Notify all</label>
+                                    <md-switch Color="'primary'"></md-switch>
+                                </div>
+
+                                <div class="text-center">
+                                    <label class="d-block mb-1">Open</label>
+                                    <md-switch Color="'primary'"></md-switch>
+                                </div>
+                            </div>
+
+                            <button class="btn btn-success mt-3">Create</button>
+                        </div>
+                    </div>
+                </div>
+            </md-tab>
+
+            <md-tab label="Text">
+                <div>
+                    <h4>Description</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores quasi repudiandae saepe
+                        ratione, adipisci, amet consequatur doloremque voluptatibus tenetur rerum vero doloribus atque.
+                        Laudantium corporis hic neque doloribus, earum et, voluptas velit blanditiis eaque error
+                        temporibus numquam? Deserunt animi fugiat eligendi repellat sequi dicta modi iste deleniti
+                        beatae, nobis, illum alias placeat facere harum ipsum officiis at nulla, assumenda consectetur
+                        culpa amet sunt voluptas! Vero neque nesciunt eos corrupti ipsam et dolorem saepe enim dolores
+                        rem! Consequatur asperiores vitae, similique repellat quibusdam aspernatur hic ex dolorem, totam
+                        ad soluta praesentium architecto incidunt quod voluptas ratione rerum, inventore itaque corporis
+                        magni?
+                    </p>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus reprehenderit tenetur
+                        architecto magni velit dolorum non, nulla possimus quia veniam perferendis neque facilis debitis
+                        praesentium ex cumque veritatis at voluptatibus molestias deleniti exercitationem officia
+                        recusandae, itaque quaerat? Distinctio fugiat quam, qui numquam, aperiam atque, soluta provident
+                        ipsum esse mollitia obcaecati. Tempora minus vitae quidem corporis obcaecati quia vel eius
+                        temporibus qui, totam libero! Corrupti eveniet alias ex labore atque, et aut nemo optio, soluta
+                        harum a facilis, impedit commodi minus laudantium dignissimos minima aliquam magni? Unde et sed
+                        sequi consequatur hic quia velit obcaecati mollitia odio modi! Voluptatem quod veniam
+                        accusantium, debitis mollitia praesentium! Minus explicabo ipsam assumenda tenetur ea libero ex,
+                        est blanditiis nulla repellat accusamus a sequi et repellendus non praesentium laborum possimus
+                        necessitatibus officiis. Perferendis, necessitatibus temporibus veritatis debitis, suscipit
+                        totam sapiente, impedit soluta nisi reiciendis mollitia quo labore harum consectetur vel minus
+                        voluptatibus ipsa officia quibusdam nulla fuga esse deleniti? Eum iure eius voluptatum
+                        asperiores adipisci. Possimus incidunt culpa, nobis alias, veritatis qui voluptatibus officiis
+                        id eaque autem, vel blanditiis inventore sed nam minima fugiat velit sit atque dolor. Quis
+                        cumque dignissimos natus ducimus fugit. Deserunt odio omnis similique debitis, veniam unde
+                        quaerat eveniet quidem nesciunt?
+                    </p>
+                </div>
+            </md-tab>
+        </md-tab-group>
+    </md-tab>
+    <md-tab label="HTML">
+        <div class="body-3">Content 2</div>
+    </md-tab>
+
+    <md-tab label="TypeScript">
+        <div class="body-3">Content 3</div>
+    </md-tab>
+</md-tab-group>
+
+<h4 class="mt-2">Large size</h4>
+
+<md-tab-group
+    md-stretch-tabs="false"
+    [isLegacyMode]="true"
+    [legacySize]="'large'"
+    [hideInkBar]="true"
+    [(selectedIndex)]="tabIndex"
+    class="mt-2"
+>
+    <md-tab label="First">Content 1</md-tab>
+    <md-tab label="Second">Content 2</md-tab>
+    <md-tab label="Third">Content 3</md-tab>
+</md-tab-group>

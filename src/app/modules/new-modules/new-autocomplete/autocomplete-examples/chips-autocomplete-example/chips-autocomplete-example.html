@@ -1,0 +1,24 @@
+<md-chip-grid #chipGrid aria-label="Fruit selection">
+    @for (fruit of fruits(); track $index) {
+    <md-chip-row (removed)="remove(fruit)">
+        {{ fruit }}
+        <button mdChipRemove [attr.aria-label]="'remove ' + fruit"><i class="icon-nok fs-12"></i></button>
+    </md-chip-row>
+    }
+</md-chip-grid>
+<input
+    name="currentFruit"
+    placeholder="New Fruit..."
+    class="form-control"
+    #fruitInput
+    [(ngModel)]="currentFruit"
+    [mdChipInputFor]="chipGrid"
+    [mdAutocomplete]="auto2"
+    [mdChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    (mdChipInputTokenEnd)="add($event)"
+/>
+<md-autocomplete #auto2="mdAutocomplete" (optionSelected)="selected($event); fruitInput.value = ''">
+    @for (fruit of filteredFruits(); track fruit) {
+    <md-option [value]="fruit">{{ fruit }}</md-option>
+    }
+</md-autocomplete>

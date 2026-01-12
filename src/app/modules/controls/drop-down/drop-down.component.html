@@ -1,0 +1,38 @@
+<h1>Dropdown Menu</h1>
+<div class="row g-4">
+  <div class="col-md-6">
+    <mefdev-card-simple>
+      <div class="p-3 pb-5">
+        <p class="h3">Dropdown example</p>
+        <p class="body-4 mb-3">Dropdown menu with custom label and two actions.</p>
+        <pre class="mb-3"><code>&lt;mefdev-dropdown-menu&gt;
+  &lt;ng-template #label&gt;
+    &lt;button class="btn btn-primary"&gt;Open drop-down&lt;/button&gt;
+  &lt;/ng-template&gt;
+
+  &lt;a class="dropdown-item"&gt;
+    &lt;span&gt;Update&lt;/span&gt;
+  &lt;/a&gt;
+
+  &lt;a class="dropdown-item"&gt;
+    &lt;span&gt;Delete&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/mefdev-dropdown-menu&gt;
+</code></pre>
+        <mefdev-dropdown-menu>
+          <ng-template #label>
+            <button class="btn btn-primary">
+              {{ 'Open drop-down' }}
+            </button>
+          </ng-template>
+          <a class="dropdown-item">
+            <span>{{ 'Update' }}</span>
+          </a>
+          <a class="dropdown-item">
+            <span>{{ 'Delete' }}</span>
+          </a>
+        </mefdev-dropdown-menu>
+      </div>
+    </mefdev-card-simple>
+  </div>
+</div>

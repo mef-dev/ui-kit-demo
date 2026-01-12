@@ -1,0 +1,10 @@
+<p>
+    <md-checkbox [formControl]="disableSelect">Disable select</md-checkbox>
+</p>
+
+<h4>md-select</h4>
+<md-select [disabled]="disableSelect.value">
+    <md-option value="option1">Option 1</md-option>
+    <md-option value="option2" disabled>Option 2 (disabled)</md-option>
+    <md-option value="option3">Option 3</md-option>
+</md-select>

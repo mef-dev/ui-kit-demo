@@ -1,0 +1,11 @@
+<section class="example-section" [formGroup]="toppings">
+    <h4>Select your toppings:</h4>
+    <p><md-checkbox formControlName="pepperoni">Pepperoni</md-checkbox></p>
+    <p><md-checkbox formControlName="extracheese">Extra Cheese</md-checkbox></p>
+    <p><md-checkbox formControlName="mushroom">Mushroom</md-checkbox></p>
+</section>
+
+<section class="example-section" [formGroup]="toppings">
+    <h4>You chose:</h4>
+    {{toppings.value | json}}
+</section>

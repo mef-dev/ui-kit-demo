@@ -1,27 +1,63 @@
-/* Загальні стилі для скролла */
-::-webkit-scrollbar {
-    width: 8px;
-  }
-  
-  /* Стилі для полоски скролла */
-  ::-webkit-scrollbar-track {
-    background-color: #b4b3cc;
-  }
-  
-  /* Стилі для ковпачка скролла */
-  ::-webkit-scrollbar-thumb {
-    background-color: #726d6d;
-    border-radius: 5px;
-  }
-  
-  /* Зміна кольору ковпачка при наведенні */
-  ::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
+@use "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/vars.scss" as *;
+@use "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/fonts.scss" as *;
+
+.sidenav {
+  position: sticky; /* прилипає у своїй колонці */
+  top: 0;
+  padding: 16px 12px;
+  background-color: var(--bg-nav) !important;
+
+  .sidenav__brand {
+    display: flex;
+    align-items: center;
+    padding: 8px 8px 12px;
+    @extend .h2;
+    color: var(--text);
   }
 
- a{
-  color:white;
- }
- a:hover{
-  color:red;
- }
+  .sidenav__divider { margin: 8px 0 12px; }
+
+  .sidenav__title{
+    @extend .h3;
+    color: var(--text);
+  }
+
+  .sidenav__list,
+  .sidenav__sublist {
+    list-style: none;
+    margin: 0;
+    display: grid;
+    width: 100%;
+    padding: 8px 8px 12px;
+    @extend .h5;
+    color: var(--text);
+
+  }
+
+  .sidenav__section { margin-bottom: 12px; }
+
+  .sidenav__section-title {
+    display: block;
+    padding: 8px 8px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    color: var(--text);
+  }
+
+  .sidenav__link {
+    display: block;
+    padding: 8px 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    color: var(--text);
+
+    &:hover { 
+      background-color: var(--bg-nav-hover); 
+    }
+    &.is-active {
+      background: var(--bg-nav-active);
+      color: $White;
+    }
+  }
+}

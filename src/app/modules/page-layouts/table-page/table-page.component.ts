@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-table-page',
-  templateUrl: './table-page.component.html',
-  styleUrls: ['./table-page.component.scss']
+    selector: 'app-table-page',
+    templateUrl: './table-page.component.html',
+    styleUrls: ['./table-page.component.scss'],
+    standalone: false
 })
 export class TablePageComponent implements OnInit {
 
   public data =[
-	{type: "sometype", username: "username", system:"system" },
-	{type: "sometype", username: "username", system:"system" },
-	{type: "sometype", username: "username", system:"system" },
-	{type: "sometype", username: "username", system:"system" },
-	{type: "sometype", username: "username", system:"system" },
-	{type: "sometype", username: "username", system:"system" },
+    {type: "sometype", username: "username", system:"system" },
+    {type: "sometype", username: "username", system:"system" },
+    {type: "sometype", username: "username", system:"system" },
+    {type: "sometype", username: "username", system:"system" },
+    {type: "sometype", username: "username", system:"system" },
+    {type: "sometype", username: "username", system:"system" },
   ]
   constructor() { }
 

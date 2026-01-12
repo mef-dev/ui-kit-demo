@@ -1,0 +1,10 @@
+<form [formGroup]="form">
+  <h4>md-select</h4>
+    <md-select [formControl]="foodControl" name="food">
+      <md-option>None</md-option>
+      @for (food of foods; track food) {
+        <md-option [value]="food.value">{{food.viewValue}}</md-option>
+      }
+    </md-select>
+  <p>Selected: {{foodControl.value}}</p>
+</form>

@@ -1,0 +1,15 @@
+<form class="example-form">
+    <input
+        type="text"
+        placeholder="Pick one"
+        class="form-control"
+        aria-label="Number"
+        [formControl]="myControl"
+        [mdAutocomplete]="auto"
+    />
+    <md-autocomplete #auto="mdAutocomplete">
+        @for (option of options; track option) {
+        <md-option [value]="option">{{option}}</md-option>
+        }
+    </md-autocomplete>
+</form>

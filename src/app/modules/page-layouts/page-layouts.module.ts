@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProfileComponent } from './profile/profile.component';
 import { CentralPageComponent } from './central-page/central-page.component';
 import { MefDevPageLayoutsModule, MefDevTabsModule } from '@natec/mef-dev-ui-kit';
 import { RouterModule } from '@angular/router';
@@ -10,7 +9,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
     declarations: [
-        ProfileComponent,
         CentralPageComponent,
         ManagePageExampleComponent,
         TablePageComponent,
@@ -26,9 +24,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
             },
             {
                 path: "manage_page", component: ManagePageExampleComponent
-            },
-            {
-                path: "profile", component: ProfileComponent
             },
             {
                 path: "table_page", component: TablePageComponent

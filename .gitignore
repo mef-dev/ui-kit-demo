@@ -40,8 +40,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
-/projects/ui-tool-kit/documentation/*
-/projects/ui-kit-lib/node_modules/*
-/projects/ui-kit-lib/documentation*
-/documentation*

@@ -1,0 +1,93 @@
+<h1>Switch</h1>
+<p class="body-4 mb-3">
+  The Switch button has two states: on and off. You can view them by clicking these buttons.
+</p>
+<div class="row g-4">
+
+  <!-- Common switch -->
+  <div class="col-md-4">
+    <mefdev-card-simple>
+      <div class="p-3 pb-5 d-flex flex-column align-items-center justify-content-center" style="min-height: 200px;">
+        <p class="h3 text-center">Common switch</p>
+        <pre class="mb-3"><code>&lt;mefdev-switch
+  [(ngModel)]="switches[0].value"
+  [Size]="'sm'"
+  [Color]="'primary'"&gt;
+&lt;/mefdev-switch&gt;</code></pre>
+        <mefdev-switch
+          [(ngModel)]="switches[0].value"
+          [Size]="'sm'"
+          [Color]="'primary'"
+          class="m-2 d-flex justify-content-center">
+        </mefdev-switch>
+      </div>
+      <p class="text-center h3 color-Dark-Gray-1 border">{{switches[0].value}}</p>
+    </mefdev-card-simple>
+  </div>
+
+  <!-- Size switch -->
+  <div class="col-md-4">
+    <mefdev-card-simple>
+      <div class="p-3 pb-5 d-flex flex-column align-items-center justify-content-center" style="min-height: 200px;">
+        <p class="h3 text-center">Size switch</p>
+        <pre class="mb-3"><code>&lt;mefdev-switch
+  [(ngModel)]="switches[1].value"
+  [Size]="'md'"
+  [Color]="'primary'"&gt;
+&lt;/mefdev-switch&gt;</code></pre>
+        <mefdev-switch
+          [(ngModel)]="switches[1].value"
+          [Size]="'md'"
+          [Color]="'primary'"
+          class="m-2 d-flex justify-content-center">
+        </mefdev-switch>
+      </div>
+      <p class="text-center h3 color-Dark-Gray-1 border">{{switches[1].value}}</p>
+    </mefdev-card-simple>
+  </div>
+
+  <!-- Disabled switch -->
+  <div class="col-md-4">
+    <mefdev-card-simple>
+      <div class="p-3 pb-5 d-flex flex-column align-items-center justify-content-center" style="min-height: 200px;">
+        <p class="h3 text-center">Disabled switch</p>
+        <pre class="mb-3"><code>&lt;mefdev-switch
+  [(ngModel)]="switches[2].value"
+  [Disabled]="true"
+  [Size]="'lg'"
+  [Color]="'primary'"&gt;
+&lt;/mefdev-switch&gt;</code></pre>
+        <mefdev-switch
+          [(ngModel)]="switches[2].value"
+          [Disabled]="true"
+          [Size]="'lg'"
+          [Color]="'primary'"
+          class="m-2 d-flex justify-content-center">
+        </mefdev-switch>
+      </div>
+      <p class="text-center h3 color-Dark-Gray-1 border">{{switches[2].value}}</p>
+    </mefdev-card-simple>
+  </div>
+
+  <!-- Color switch -->
+  <div class="col-md-4">
+    <mefdev-card-simple>
+      <div class="p-3 pb-5 d-flex flex-column align-items-center justify-content-center" style="min-height: 200px;">
+        <p class="h3 text-center">Color switch</p>
+        <pre class="mb-3"><code>&lt;mefdev-switch
+  [(ngModel)]="switches[3].value"
+  [Color]="'warning'"
+  [Size]="'lg'"&gt;
+&lt;/mefdev-switch&gt;</code></pre>
+        <mefdev-switch
+          [(ngModel)]="switches[3].value"
+          [Color]="'warning'"
+          [Size]="'lg'"
+          class="m-2 d-flex justify-content-center">
+        </mefdev-switch>
+      </div>
+      <p class="text-center h3 color-Dark-Gray-1 border">{{switches[3].value}}</p>
+    </mefdev-card-simple>
+  </div>
+
+</div>

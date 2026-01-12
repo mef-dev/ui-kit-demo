@@ -1,0 +1,145 @@
+<h1>Tabset</h1>
+
+<mefdev-tabset tabAnimation="slide-left" Type="simple" ShowPagination="true">
+  <!-- TAB 1: Search -->
+  <mefdev-tab>
+    <ng-template #TabHeading>Search</ng-template>
+    <p class="body-4 mb-3">
+      Use the form below to search for products by various parameters. Combine filters to get the most accurate results for your needs.
+    </p>
+    <form>
+      <div class="container">
+        <div class="row g-4">
+
+          <div class="col-md-4">
+            <div class="form-group mb-4">
+              <label class="fw-bold mb-2">Product Name</label>
+              <input class="form-control" type="text" placeholder="Enter product name">
+            </div>
+            <div class="form-group mb-4">
+              <label class="fw-bold mb-2">Category</label>
+              <mefdev-select [FirstDefault]="true" class="w-100">
+                <mefdev-option [Label]="'Laptops'" [Value]="'Laptops'"></mefdev-option>
+                <mefdev-option [Label]="'Smartphones'" [Value]="'Smartphones'"></mefdev-option>
+                <mefdev-option [Label]="'Clothes'" [Value]="'Clothes'"></mefdev-option>
+              </mefdev-select>
+            </div>
+            <div class="form-group mb-4">
+              <label class="fw-bold mb-2">Brands</label>
+              <mefdev-select [PlaceHolder]="'Choose brands'" [Mode]="'multiple'" class="w-100">
+                <mefdev-option [Label]="'Asus'" [Value]="'Asus'"></mefdev-option>
+                <mefdev-option [Label]="'Samsung'" [Value]="'Samsung'"></mefdev-option>
+                <mefdev-option [Label]="'Puma'" [Value]="'Puma'"></mefdev-option>
+                <mefdev-option [Label]="'Apple'" [Value]="'Apple'"></mefdev-option>
+              </mefdev-select>
+              <small class="text-muted">You can select multiple brands</small>
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex flex-column justify-content-evenly align-items-center gap-4">
+            <div class="form-group mb-4 d-flex flex-column align-items-center w-100">
+              <label class="fw-bold mb-2">Free Shipping</label>
+              <div class="d-flex justify-content-center gap-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="delivery" id="deliveryYes" value="true">
+                  <label class="form-check-label" for="deliveryYes">Yes</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="delivery" id="deliveryNo" value="false">
+                  <label class="form-check-label" for="deliveryNo">No</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group w-100">
+              <button class="btn btn-success w-100" type="submit">Search Products</button>
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex flex-column gap-4">
+            <div class="alert alert-info mb-0">
+              <strong>Tip:</strong> For a more accurate search, try combining several filters at once.
+            </div>
+            <div class="bg-light rounded p-3 text-muted">
+              You can select several brands or categories to make your search more flexible.
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mefdev-tab>
+
+  <!-- TAB 2: Create -->
+  <mefdev-tab>
+    <ng-template #TabHeading>Add Product</ng-template>
+    <p class="body-4 mb-3">
+      Fill out the form below to add a new product to your catalog.
+    </p>
+    <form>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="form-group mb-4">
+              <label class="fw-bold mb-2">Product Name</label>
+              <input class="form-control" type="text" placeholder="Enter product name">
+            </div>
+            <div class="form-group mb-4">
+              <label class="fw-bold mb-2">Priority</label>
+              <mefdev-select [FirstDefault]="true" class="w-100">
+                <mefdev-option [Label]="'Low'" [Value]="'Low'"></mefdev-option>
+                <mefdev-option [Label]="'Medium'" [Value]="'Medium'"></mefdev-option>
+                <mefdev-option [Label]="'High'" [Value]="'High'"></mefdev-option>
+              </mefdev-select>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="form-group mb-4">
+              <label class="fw-bold mb-2">Product Description</label>
+              <textarea placeholder="Describe the product..." class="form-control" rows="5"></textarea>
+            </div>
+          </div>
+
+          <div class="col-md-4 d-flex flex-column align-items-center gap-4">
+            <div class="w-100 d-flex flex-wrap gap-3">
+              <div class="form-group d-flex flex-column align-items-center">
+                <label class="fw-bold mb-2">Notify All</label>
+                <mefdev-switch [Size]="'small'" [Color]="'primary'"></mefdev-switch>
+              </div>
+              <div class="form-group d-flex flex-column align-items-center">
+                <label class="fw-bold mb-2">Open Product</label>
+                <mefdev-switch [Size]="'small'" [Color]="'primary'"></mefdev-switch>
+              </div>
+            </div>
+            <div class="form-group w-100">
+              <button class="btn btn-success w-100" type="submit">Add Product</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </mefdev-tab>
+
+  <!-- TAB 3: Info -->
+  <mefdev-tab>
+    <ng-template #TabHeading>Info</ng-template>
+    <p class="body-4 mb-3">
+      Here you can find more information and useful tips for working with tabsets.
+    </p>
+    <div class="alert alert-info">
+      <strong>What is a Tabset?</strong><br>
+      Tabset is a flexible container that allows you to organize any content in tabs. This makes switching between sections quick and user-friendly.
+    </div>
+    <p>
+      Tabs are a great way to structure your interface and keep all key actions within reach. You can add, search, or view extra details without navigating away from the current page.
+    </p>
+    <p>
+      The <b>mefdev-tabset</b> component supports custom animations, nested routing, any kind of content (forms, lists, charts, etc.), and a simple API for customization. You can change appearance, tab type, placement, and integrate your own components.
+    </p>
+    <ul>
+      <li>Animated tab transitions</li>
+      <li>Flexible placement and style</li>
+      <li>Supports forms, lists, buttons, selects, switches, and more</li>
+      <li>Customizable for any content</li>
+    </ul>
+  </mefdev-tab>
+</mefdev-tabset>

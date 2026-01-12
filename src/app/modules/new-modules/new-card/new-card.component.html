@@ -1,0 +1,13 @@
+<h3 class="p-l-20 p-t-15">Card</h3>
+
+@for (item of items; track item) {
+<example-viewer
+    [component]="item[0]"
+    [html]="item[1]"
+    [css]="item[2]"
+    [ts]="item[3]"
+    [title]="item[4]"
+></example-viewer>
+} @empty {
+<li>There are no examples.</li>
+}

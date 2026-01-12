@@ -1,0 +1,5 @@
+<md-select [(ngModel)]="value">
+    @for (option of options; track option) {
+    <md-option [value]="option.value">{{option.label}}</md-option>
+    }
+</md-select>

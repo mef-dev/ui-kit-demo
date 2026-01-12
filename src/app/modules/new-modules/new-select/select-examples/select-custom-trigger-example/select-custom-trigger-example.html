@@ -1,0 +1,12 @@
+<md-select [formControl]="toppings" multiple>
+    <md-select-trigger>
+        {{toppings.value?.[0] || ''}} @if ((toppings.value?.length || 0) > 1) {
+        <span class="example-additional-selection">
+            (+{{(toppings.value?.length || 0) - 1}} {{toppings.value?.length === 2 ? 'other' : 'others'}})
+        </span>
+        }
+    </md-select-trigger>
+    @for (topping of toppingList; track topping) {
+    <md-option [value]="topping">{{topping}}</md-option>
+    }
+</md-select>

@@ -1,0 +1,34 @@
+<md-accordion>
+    <md-expansion-panel hideToggle>
+        <md-expansion-panel-header>
+            <md-panel-title> This is the expansion title </md-panel-title>
+            <md-panel-description> This is a summary of the content </md-panel-description>
+        </md-expansion-panel-header>
+        <h4>This is the primary content of the panel.</h4>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium tempora magni cupiditate ratione earum
+            aspernatur autem provident, libero necessitatibus voluptate assumenda deleniti ducimus itaque adipisci odit
+            ipsam rerum illo quo? Enim, facilis. Perferendis quisquam eius dicta quos quaerat iure pariatur, incidunt,
+            eveniet quis alias nobis perspiciatis error numquam provident nulla voluptates, quo quibusdam! Quibusdam
+            numquam reprehenderit, voluptatibus ullam beatae dolores! Nisi quo tenetur dolores. Temporibus porro hic
+            repellat, unde molestias doloribus praesentium sapiente reprehenderit architecto voluptas assumenda ex
+            debitis, eveniet eaque modi quae dolore quibusdam nihil commodi! Quidem, obcaecati. Quisquam.
+        </p>
+    </md-expansion-panel>
+    <md-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+        <md-expansion-panel-header>
+            <md-panel-title> Self aware panel </md-panel-title>
+            <md-panel-description> Currently I am {{panelOpenState() ? 'open' : 'closed'}} </md-panel-description>
+        </md-expansion-panel-header>
+        <h4>I'm visible because I am open</h4>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam beatae voluptatibus iste tempora cum magni
+            repudiandae, aut eos iure obcaecati perferendis laudantium fugiat iusto voluptatem provident quae vitae
+            doloremque consequuntur? Quibusdam, beatae unde ad aperiam ipsa tempora neque. Commodi, odio a hic
+            praesentium maiores reprehenderit molestias quisquam placeat, reiciendis cumque beatae optio sit quo ducimus
+            facilis modi aliquam quae ipsum! Ullam ducimus asperiores et id dolorem eum, dolor facilis consectetur
+            provident est placeat quia labore quo accusamus delectus recusandae! Doloremque debitis ea voluptate
+            impedit. Animi amet minus sapiente blanditiis quod.
+        </p>
+    </md-expansion-panel>
+</md-accordion>

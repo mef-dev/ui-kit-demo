@@ -9,9 +9,10 @@ enum DataKeys{
 }
 
 @Component({
-  selector: 'app-filtered-field',
-  templateUrl: './filtered-field.component.html',
-  styleUrls: ['./filtered-field.component.scss']
+    selector: 'app-filtered-field',
+    templateUrl: './filtered-field.component.html',
+    styleUrls: ['./filtered-field.component.scss'],
+    standalone: false
 })
 export class FilteredFieldComponent implements OnInit {
   public DataKeys: typeof DataKeys = DataKeys;

@@ -1,0 +1,63 @@
+<div class="docs-example-viewer-wrapper">
+    <div class="docs-example-viewer-title">
+        <div class="docs-example-viewer-title-spacer">{{ title }}</div>
+        <button class="action-icon" type="button" aria-label="View source" (click)="toggleSourceView()">
+            <i class="icon-code"></i>
+        </button>
+    </div>
+    @if (view() === 'full') {
+    <div class="docs-example-viewer-source">
+        <md-tab-group md-stretch-tabs="false">
+            <md-tab [label]="'HTML'">
+                <ng-template mdTabContent>
+                    <div class="code-snippet position-relative">
+                        <div class="body-3 code-viewer" #htmlRawEditor></div>
+                        <button
+                            class="copy-icon-position action-icon"
+                            type="button"
+                            aria-label="View source"
+                            (click)="copyToClipboard('html')"
+                        >
+                            <i class="icon-copy"></i>
+                        </button>
+                    </div>
+                </ng-template>
+            </md-tab>
+            <md-tab [label]="'CSS'">
+                <ng-template mdTabContent>
+                    <div class="code-snippet">
+                        <div class="body-3 code-viewer" #cssRawEditor></div>
+                        <button
+                            class="copy-icon-position action-icon"
+                            type="button"
+                            aria-label="View source"
+                            (click)="copyToClipboard('css')"
+                        >
+                            <i class="icon-copy"></i>
+                        </button>
+                    </div>
+                </ng-template>
+            </md-tab>
+            <md-tab [label]="'TS'">
+                <ng-template mdTabContent>
+                    <div class="code-snippet">
+                        <div class="body-3 code-viewer" #tsRawEditor></div>
+                        <button
+                            class="copy-icon-position action-icon"
+                            type="button"
+                            aria-label="View source"
+                            (click)="copyToClipboard('ts')"
+                        >
+                            <i class="icon-copy"></i>
+                        </button>
+                    </div>
+                </ng-template>
+            </md-tab>
+        </md-tab-group>
+    </div>
+    }
+
+    <div class="docs-example-viewer-body">
+        <ng-template [ngComponentOutlet]="component"></ng-template>
+    </div>
+</div>

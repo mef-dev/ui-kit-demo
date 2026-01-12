@@ -1,178 +1,288 @@
-  <h1 id="-natec-mef-dev-ui-kit">@natec/mef-dev-ui-kit</h1>
-  <h2 id="description">Description</h2>
-  <p>This is Ui-kit-lib to create plugins according to the template and visual on the platform <a target="_blank" href="https://preview.mef.dev/">preview.mef.dev</a> with the help of ready made solutions.It provides users with the opportunity to explore and test various components and functionalities of the library before using them in their own projects.
-  How to create your first Ui-package click <a target="_blank" href="https://mef.dev/dev_guides/first_ui_plugin.md">here</a></p>
-  <p>Also you can check displaying of all the elements together here <a href="https://mef.dev/ui_kit_demo">UI-kit-demo</a>.</p>
-  <p>This guide created for Angular@15 version project. Cause we will use packages compatible with Angular 15 version.</p>
-  <h2 id="version-control">Version control</h2>
-  <p>You can use the library on the following versions of Angular:</p>
+<h1 id="-natec-mef-dev-ui-kit">@natec/mef-dev-ui-kit</h1>
+<p>A comprehensive Angular UI component library for building modern web applications on the MEF.DEV platform.</p>
+<p><a href="https://www.npmjs.com/package/@natec/mef-dev-ui-kit"><img src="https://img.shields.io/npm/v/@natec/mef-dev-ui-kit.svg" alt="npm version"></a>
+<a href="https://angular.io/"><img src="https://img.shields.io/badge/Angular-20-red.svg" alt="Angular"></a></p>
+<h2 id="overview">Overview</h2>
+<p>MEF.DEV UI Kit is a production-ready Angular component library that provides 50+ components organized into three distinct categories. Each component is built with modern Angular practices, accessibility in mind, and supports reactive forms integration.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><strong>Responsive Design</strong> with mobile-first approach</li>
+<li><strong>Accessibility</strong> with ARIA support and keyboard navigation</li>
+<li><strong>Angular Forms</strong> integration with ControlValueAccessor</li>
+<li><strong>Smooth Animations</strong> using Angular animations</li>
+<li><strong>TypeScript</strong> first with full type definitions</li>
+<li><strong>Tree-shakeable</strong> modular architecture</li>
+</ul>
+<h2 id="version-compatibility">Version Compatibility</h2>
+<table>
+<thead>
+<tr>
+<th>Angular/CLI</th>
+<th>@natec/mef-dev-ui-kit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>v13</td>
+<td>v1.x</td>
+</tr>
+<tr>
+<td>v14</td>
+<td>v14.x</td>
+</tr>
+<tr>
+<td>v15</td>
+<td>v15.x</td>
+</tr>
+<tr>
+<td>v16</td>
+<td>v16.x</td>
+</tr>
+<tr>
+<td>v20</td>
+<td>v20.x</td>
+</tr>
+</tbody>
+</table>
+<h2 id="installation">Installation</h2>
+<pre><code class="lang-bash"><span class="hljs-selector-tag">npm</span> <span class="hljs-selector-tag">install</span> @<span class="hljs-keyword">natec</span>/<span class="hljs-keyword">mef</span>-<span class="hljs-keyword">dev</span>-<span class="hljs-keyword">ui</span>-<span class="hljs-keyword">kit</span>@<span class="hljs-keyword">20</span>
+</code></pre>
+<h3 id="peer-dependencies">Peer Dependencies</h3>
+<p>Install the required peer dependencies:</p>
+<pre><code class="lang-bash">npm install <span class="hljs-symbol">@angular</span>/cdk<span class="hljs-symbol">@20</span> <span class="hljs-symbol">@angular</span>/forms<span class="hljs-symbol">@20</span>
+</code></pre>
+<h3 id="optional-dependencies">Optional Dependencies</h3>
+<p>Some components may require additional dependencies:</p>
+<pre><code class="lang-bash"><span class="hljs-meta"># For enhanced data tables</span>
+npm install <span class="hljs-symbol">@swimlane</span>/ngx-datatable<span class="hljs-symbol">@20</span>
 
-    <table>
-      <tr>
-        <th>Angular/CLI</th>
-        <th>@natec/mef-dev-ui-kit</th>
-      </tr>
-      <tr>
-        <td>v.13</td>
-        <td>v.1</td>
-      </tr>
-      <tr>
-        <td>v.14</td>
-        <td>v.14</td>
-      </tr>
-      <tr>
-        <td>v.15</td>
-        <td>v.15</td>
-      </tr>
-      <tr>
-        <td>v.16</td>
-        <td>v.16</td>
-      </tr>
-    </table>
-  <h2 id="getting-started" class="gettingStartedMargin">Getting Started</h2>
-  <h3 id="installing">Installing</h3>
-  <p>  Firstly you need to install following packages:</p>
+<span class="hljs-meta"># For styling (if not using custom theme)</span>
+npm install bootstrap<span class="hljs-symbol">@5</span> ngx-bootstrap<span class="hljs-symbol">@10</span> font-awesome<span class="hljs-symbol">@4</span>
+</code></pre>
+<h2 id="setup">Setup</h2>
+<h3 id="1-import-styles">1. Import Styles</h3>
+<p>Add the library styles to your <code>angular.json</code>:</p>
+<pre><code class="lang-json">{{"{"}}
+  <span class="hljs-attr">"architect"</span>: {{"{"}}
+    <span class="hljs-attr">"build"</span>: {{"{"}}
+      <span class="hljs-attr">"options"</span>: {{"{"}}
+        <span class="hljs-attr">"styles"</span>: [
+          <span class="hljs-string">"node_modules/bootstrap/scss/bootstrap.scss"</span>,
+          <span class="hljs-string">"node_modules/@natec/mef-dev-ui-kit/src/lib/styles/core.scss"</span>,
+          <span class="hljs-string">"node_modules/font-awesome/scss/font-awesome.scss"</span>,
+          <span class="hljs-string">"src/styles.scss"</span>
+        ]
+      {{"}"}}
+    {{"}"}}
+  {{"}"}}
+{{"}"}}
+</code></pre>
+<p>Alternatively, import styles in your <code>styles.scss</code>:</p>
+<pre><code class="lang-scss">@<span class="hljs-keyword">import</span> <span class="hljs-string">'@natec/mef-dev-ui-kit/styles/core'</span>;
+</code></pre>
+<h3 id="2-enable-animations">2. Enable Animations</h3>
+<p>Import <code>BrowserAnimationsModule</code> in your root module:</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> {{"{"}} NgModule {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {{"{"}} BrowserModule {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/platform-browser'</span>;
+<span class="hljs-keyword">import</span> {{"{"}} BrowserAnimationsModule {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/platform-browser/animations'</span>;
 
-  <p> @natec/mef-dev-ui-kit: </p>
-  <markdown style="margin-top: 15px">
-      <code> &emsp;
-        npm i @natec/mef-dev-ui-kit@15
-      </code>
-  </markdown>
+@NgModule({{"{"}}
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule
+  ]
+{{"}"}})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppModule</span> {{"{"}} {{"}"}}</span>
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="basic-example">Basic Example</h3>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> {{"{"}} Component {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {{"{"}} MefDevCardModule {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@natec/mef-dev-ui-kit'</span>;
 
-  <p>Simple table extension with sorting, filtering, paging... for Angular apps. ngx-datatable: </p>
-  <markdown>
-      <code>
-        npm i @swimlane/ngx-datatable@20
-      </code>
-  </markdown>
+@Component({{"{"}}
+  selector: <span class="hljs-string">'app-example'</span>,
+  standalone: <span class="hljs-literal">true</span>,
+  imports: [MefDevCardModule],
+  template: `
+    &lt;mefdev-card
+      [description]=<span class="hljs-string">"'Card description'"</span>
+      [card_type]=<span class="hljs-string">"'primary'"</span>&gt;
+      &lt;ng-template <span class="hljs-comment">#card_title&gt;</span>
+        Card Title
+      &lt;/ng-template&gt;
+      &lt;ng-template <span class="hljs-comment">#card_footer&gt;</span>
+        &lt;button&gt;Action&lt;/button&gt;
+      &lt;/ng-template&gt;
+    &lt;/mefdev-card&gt;
+  `
+{{"}"}})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleComponent</span> {{"{"}} {{"}"}}</span>
+</code></pre>
+<h2 id="component-categories">Component Categories</h2>
+<h3 id="markup-kit-components">Markup-Kit Components</h3>
+<p>Layout and structural components for building page templates.</p>
+<h4 id="available-modules">Available Modules</h4>
+<ul>
+<li><strong>MefDevCardModule</strong> - Card containers with header, content, and footer</li>
+<li><strong>MefDevCollapseModule</strong> - Collapsible panels with animation</li>
+<li><strong>MefDevDropDownMenuModule</strong> - Dropdown menus with positioning</li>
+<li><strong>MefDevModalModule</strong> - Modal dialogs (fill screen, slide-up, slide-right, filter panel)</li>
+<li><strong>MefDevPageLayoutsModule</strong> - Pre-built page layouts (central, table, manage)</li>
+<li><strong>MefDevStepExecutorModule</strong> - Step-by-step execution wizards</li>
+<li><strong>MefDevFilteredFieldModule</strong> - Filtered field inputs with suggestions</li>
+</ul>
+<h3 id="pg-components">PG-Components</h3>
+<p>Specialized form controls and interactive components.</p>
+<h4 id="available-modules">Available Modules</h4>
+<ul>
+<li><strong>MefDevProgressModule</strong> - Progress bars and indicators</li>
+<li><strong>MefDevSelectModule</strong> - Custom select dropdowns with option pipes</li>
+<li><strong>MefDevSwitchModule</strong> - Toggle switches</li>
+<li><strong>MefDevTabsModule</strong> - Tabbed content panels</li>
+</ul>
+<h3 id="v2-components-material-design-">V2 Components (Material Design)</h3>
+<p>Modern Material Design components with full form integration and accessibility support.</p>
+<h4 id="available-modules">Available Modules</h4>
+<ul>
+<li><strong>MDCardModule</strong> - Material Design cards</li>
+<li><strong>MDCheckBoxModule</strong> - Checkboxes with form validation</li>
+<li><strong>MDCollapseModule</strong> - Expansion panels and accordions</li>
+<li><strong>MDSteppperModule</strong> - Multi-step forms and wizards</li>
+<li><strong>MDMenuModule</strong> - Context menus and dropdown menus</li>
+<li><strong>MDModalModule</strong> - Material Design dialogs</li>
+<li><strong>MDSelectModule</strong> - Advanced select with search and grouping</li>
+<li><strong>MDSwitchModule</strong> - Material Design toggle switches</li>
+<li><strong>MDTabsModule</strong> - Material Design tabs with animations</li>
+</ul>
+<h2 id="advanced-usage">Advanced Usage</h2>
+<h3 id="form-integration">Form Integration</h3>
+<p>V2 components implement <code>ControlValueAccessor</code> for seamless reactive forms integration:</p>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> {{"{"}} Component {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {{"{"}} FormControl, FormGroup, ReactiveFormsModule {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/forms'</span>;
+<span class="hljs-keyword">import</span> {{"{"}} MDCheckBoxModule, MDSelectModule {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@natec/mef-dev-ui-kit'</span>;
 
-  <p>Sleek, intuitive, and powerful front-end framework for faster and easier web development. bootstrap:</p>
-  <markdown>
-    <code>
-      npm i bootstrap@5
-    </code>
-  </markdown>
+@Component({{"{"}}
+  selector: <span class="hljs-string">'app-form'</span>,
+  standalone: <span class="hljs-literal">true</span>,
+  imports: [ReactiveFormsModule, MDCheckBoxModule, MDSelectModule],
+  template: `
+    &lt;form [formGroup]=<span class="hljs-string">"form"</span>&gt;
+      &lt;md-checkbox formControlName=<span class="hljs-string">"agreed"</span>&gt;
+        I agree <span class="hljs-keyword">to</span> terms
+      &lt;/md-checkbox&gt;
 
-  <p>Ngx-bootstrap provides Bootstrap components powered by Angular, so you don&#39;t need to include original JS components.ngx-bootstrap:</p>
-  <markdown>
-    <code>
-    npm i ngx-bootstrap@10
-    </code>
-  </markdown>
+      &lt;md-select formControlName=<span class="hljs-string">"country"</span> placeholder=<span class="hljs-string">"Select country"</span>&gt;
+        &lt;md-option value=<span class="hljs-string">"ua"</span>&gt;Ukraine&lt;/md-option&gt;
+        &lt;md-option value=<span class="hljs-string">"us"</span>&gt;United States&lt;/md-option&gt;
+      &lt;/md-select&gt;
+    &lt;/form&gt;
+  `
+{{"}"}})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FormComponent</span> {{"{"}}</span>
+  form = <span class="hljs-keyword">new</span> FormGroup({{"{"}}
+    agreed: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-literal">false</span>),
+    country: <span class="hljs-keyword">new</span> FormControl(<span class="hljs-string">''</span>)
+  {{"}"}});
+{{"}"}}
+</code></pre>
+<h3 id="modal-dialogs">Modal Dialogs</h3>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> {{"{"}} Component, inject {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {{"{"}} MDDialog, MDModalModule {{"}"}} <span class="hljs-keyword">from</span> <span class="hljs-string">'@natec/mef-dev-ui-kit'</span>;
 
-  <p>CSS font-family parser/stringifier. Font-awesome:</p>
-  <markdown [lineOffset]="">
-    <code>
-      npm i font-awesome@4
-    </code>
-  </markdown>
+@Component({{"{"}}
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">'app-dialog-example'</span>,
+  <span class="hljs-attr">template</span>: <span class="hljs-string">`
+    &lt;button (click)="openDialog()"&gt;Open Dialog&lt;/button&gt;
+  `</span>
+{{"}"}})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DialogExampleComponent</span> </span>{{"{"}}
+  private dialog = inject(MDDialog);
 
-  <h3 id="adding-dependencies-">Adding dependencies:</h3>
-  <p>  Now you need to add path in your Angular.json file </p>
-  <markdown>
-    <code>
-      &nbsp; "architect": {{'{'}}
-      <br> &nbsp; &nbsp; "build": {{'{'}}
-      <br> &nbsp; &nbsp; &nbsp; "options": {{'{'}}
-      <br> &nbsp; &nbsp; &nbsp; &nbsp; "styles": [
-      <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "node_modules/bootstrap/scss/bootstrap.scss",
-      <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/pg/core.scss",
-      <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "node_modules/font-awesome/scss/font-awesome.scss",
-      <br> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "src/styles.scss"
-      <br> &nbsp; &nbsp; &nbsp; &nbsp; ]
-      <br> &nbsp; &nbsp; &nbsp; {{'}'}}
-      <br> &nbsp; &nbsp; {{'}'}}
-      <br> &nbsp; {{'}'}}
-    </code>
-  </markdown>
+  openDialog() {{"{"}}
+    <span class="hljs-keyword">const</span> dialogRef = <span class="hljs-keyword">this</span>.dialog.open(MyDialogComponent, {{"{"}}
+      <span class="hljs-attr">width</span>: <span class="hljs-string">'400px'</span>,
+      <span class="hljs-attr">data</span>: {{"{"}} <span class="hljs-attr">name</span>: <span class="hljs-string">'Example'</span> {{"}"}}
+    {{"}"}});
 
-  <h3 id="usage">Usage</h3>
-  <p>Firstly, you need to import BrowserAnimationsModule in your app.module.ts </p>
-  <markdown>
-    <code>
-      &nbsp; import {{'{'}} NgModule {{'}'}} from '@angular/core'; <br>
-      &nbsp; import {{'{'}} BrowserModule {{'}'}} from '@angular/platform-browser'; <br>
-      &nbsp; import {{'{'}} BrowserAnimationsModule {{'}'}} from '@angular/platform-browser/animations'; <br>
+    dialogRef.afterClosed().subscribe(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {{"{"}}
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Dialog closed with result:'</span>, result);
+    {{"}"}});
+  {{"}"}}
+{{"}"}}
+</code></pre>
+<h3 id="stepper-wizard">Stepper Wizard</h3>
+<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> {{"{"}} Component {{"}"}} from <span class="hljs-string">'@angular/core'</span>;
+<span class="hljs-keyword">import</span> {{"{"}} MDSteppperModule {{"}"}} from <span class="hljs-string">'@natec/mef-dev-ui-kit'</span>;
 
-      &nbsp; import {{'{'}} AppRoutingModule {{'}'}} from './app-routing.module'; <br>
-      &nbsp; import {{'{'}} AppComponent {{'}'}} from './app.component'; <br>
+@Component({{"{"}}
+  selector: <span class="hljs-string">'app-wizard'</span>,
+  standalone: true,
+  imports: [MDSteppperModule],
+  <span class="hljs-keyword">template</span>: `
+    &lt;md-stepper&gt;
+      &lt;md-<span class="hljs-built_in">step</span> label=<span class="hljs-string">"Step 1"</span>&gt;
+        &lt;md-<span class="hljs-built_in">step</span>-content&gt;
+          Content <span class="hljs-built_in">for</span> <span class="hljs-built_in">step</span> <span class="hljs-number">1</span>
+        &lt;/md-<span class="hljs-built_in">step</span>-content&gt;
+        &lt;md-<span class="hljs-built_in">step</span>-footer&gt;
+          &lt;button mdStepperNext&gt;Next&lt;/button&gt;
+        &lt;/md-<span class="hljs-built_in">step</span>-footer&gt;
+      &lt;/md-<span class="hljs-built_in">step</span>&gt;
 
-      &nbsp; @NgModule({{'{'}} <br>
-      &nbsp; &nbsp; declarations: [AppComponent], <br>
-      &nbsp; &nbsp; imports: [ <br>
-      &nbsp; &nbsp; &nbsp; BrowserModule, <br>
-      &nbsp; &nbsp; &nbsp; AppRoutingModule, <br>
-      &nbsp; &nbsp; &nbsp; BrowserAnimationsModule <br>
-      &nbsp; &nbsp; ], <br>
-      &nbsp; &nbsp; providers: [], <br>
-      &nbsp; &nbsp; bootstrap: [AppComponent] <br>
-      &nbsp; {{'}'}}) <br>
-
-      &nbsp; export class AppModule {{'{'}} {{'}'}}
-    </code>
-  </markdown>
-
-  <p>You need to import Module from Ui-kit-lib installed earlier in your own module, and add to imports too.
-  Example:</p>
-
-  <markdown>
-    <code>
-      &nbsp; import {{'{'}} NgModule {{'}'}} from '@angular/core'; <br>
-      &nbsp; import {{'{'}} CommonModule {{'}'}} from '@angular/common'; <br>
-      &nbsp; import {{'{'}} MefDevCardModule {{'}'}} from '@natec/mef-dev-ui-kit'; <br>
-
-      &nbsp; @NgModule({{'{'}} <br>
-      &nbsp; &nbsp; declarations: [], <br>
-      &nbsp; &nbsp; imports: [ <br>
-      &nbsp; &nbsp; &nbsp; CommonModule, <br>
-      &nbsp; &nbsp; &nbsp; MefDevCardModule, <br>
-      &nbsp; &nbsp; ] <br>
-      &nbsp; {{'}'}}) <br>
-
-      &nbsp; export class CardsModule {{'{'}} {{'}'}}
-    </code>
-  </markdown>
-
-  <p>After, you can use MefDev components in your project. Example of usage:</p>
-  <markdown>
-    <code class="lang-html">
-      &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">mefdev-card</span> <br>
-        &nbsp; &nbsp; <span class="hljs-attr">class</span>=<span class="hljs-string">"b-color-Light-Gray-2 pt-3"</span> <br>
-        &nbsp; &nbsp; [<span class="hljs-attr">description</span>] = <span class="hljs-string">"'Description'"</span> <br>
-        &nbsp; &nbsp; [<span class="hljs-attr">card_type</span>]=<span class="hljs-string">"'type'"</span> <br>
-        &nbsp; &nbsp; [<span class="hljs-attr">img</span>]=<span class="hljs-string">"'assets/imgs/store/Frame 521.png'"</span>&gt;</span> <br>
-        &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">card_title</span>&gt;</span> <br>
-        &nbsp; &nbsp; &nbsp; &nbsp; card_title <br>
-        &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">/ng-template</span>&gt;</span> <br>
-        &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">ng-template</span> #<span class="hljs-attr">card_footer</span>&gt;</span> <br>
-        &nbsp; &nbsp; &nbsp; &nbsp; card_footer <br>
-        &nbsp; &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">/ng-template</span>&gt;</span> <br>
-      &nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">/mefdev-card</span>&gt;</span>
-    </code>
-  </markdown>
-
-  <h3 id="list-of-modules-you-can-import-in-your-project-">List of modules you can import in your project:</h3>
-  <ul>
-  <li>MefDevCardModule</li>
-  <li>MefDevCollapseModule</li>
-  <li>MefDevModalModule</li>
-  <li>MefDevPageLayoutsModule</li>
-  <li>MefDevFilteredFieldModule</li>
-  <li>MefDevHelpBlockModule</li>
-  <li>MefDevProgressModule</li>
-  <li>MefDevSelectModule</li>
-  <li>MefDevSwitchModule</li>
-  <li>MefDevTabsModule</li>
-  </ul>
-  <blockquote>
-  <p>Examples of other components you can find in this documentation in left menubar.</p>
-  </blockquote>
-  <h3 id="useful-links-">Useful links:</h3>
-  <hr>
-  <ul>
-  <li>Documentation of the library: <a target="_blank" href="https://mef.dev/ui_kit">https://mef.dev/ui_kit</a></li>
-  <li>Demo of the library: <a href="https://mef.dev/ui_kit_demo">https://mef.dev/ui_kit_demo</a></li>
-  <li>Library package: <a target="_blank" href="https://www.npmjs.com/package/@natec/mef-dev-ui-kit">https://www.npmjs.com/package/@natec/mef-dev-ui-kit</a></li>
-  <li>Ui-kit-lib at GitHub: <a target="_blank" href="https://github.com/mef-dev/ui-kit-demo.git">https://github.com/mef-dev/ui-kit-demo.git</a></li>
-  </ul>
+      &lt;md-<span class="hljs-built_in">step</span> label=<span class="hljs-string">"Step 2"</span>&gt;
+        &lt;md-<span class="hljs-built_in">step</span>-content&gt;
+          Content <span class="hljs-built_in">for</span> <span class="hljs-built_in">step</span> <span class="hljs-number">2</span>
+        &lt;/md-<span class="hljs-built_in">step</span>-content&gt;
+        &lt;md-<span class="hljs-built_in">step</span>-footer&gt;
+          &lt;button mdStepperPrevious&gt;Back&lt;/button&gt;
+          &lt;button mdStepperNext&gt;Next&lt;/button&gt;
+        &lt;/md-<span class="hljs-built_in">step</span>-footer&gt;
+      &lt;/md-<span class="hljs-built_in">step</span>&gt;
+    &lt;/md-stepper&gt;
+  `
+{{"}"}})
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> WizardComponent {{"{"}} {{"}"}}
+</code></pre>
+<h2 id="styling-and-theming">Styling and Theming</h2>
+<h3 id="using-css-variables">Using CSS Variables</h3>
+<p>The library exposes CSS variables that you can override:</p>
+<pre><code class="lang-scss"><span class="hljs-selector-pseudo">:root</span> {{"{"}}
+  <span class="hljs-attribute">--mef-primary-color</span>: <span class="hljs-number">#007bff</span>;
+  <span class="hljs-attribute">--mef-secondary-color</span>: <span class="hljs-number">#6c757d</span>;
+  <span class="hljs-attribute">--mef-border-radius</span>: <span class="hljs-number">4px</span>;
+{{"}"}}
+</code></pre>
+<h3 id="component-specific-styling">Component-Specific Styling</h3>
+<p>V2 components use <code>ViewEncapsulation.None</code> for easy customization:</p>
+<pre><code class="lang-scss">md-<span class="hljs-class">select </span>{{"{"}}
+  .md-select-<span class="hljs-class">trigger </span>{{"{"}}
+<span class="hljs-symbol">    border:</span> <span class="hljs-number">2</span>px solid <span class="hljs-meta">#custom-color;</span>
+  {{"}"}}
+{{"}"}}
+</code></pre>
+<h2 id="api-documentation">API Documentation</h2>
+<p>For detailed component APIs, properties, methods, and events, visit:</p>
+<ul>
+<li><strong>Full Documentation</strong>: <a href="https://platform.mef.dev/ui_kit">https://platform.mef.dev/ui_kit</a></li>
+<li><strong>Live Demo</strong>: <a href="https://platform.mef.dev/ui_kit_demo">https://platform.mef.dev/ui_kit_demo</a></li>
+<li><strong>Interactive Preview</strong>: <a href="https://preview.mef.dev/">https://preview.mef.dev</a></li>
+</ul>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><strong>Creating Your First Plugin</strong>: <a href="https://platform.mef.dev/dev_guides/first_ui_plugin.md">Developer Guide</a></li>
+<li><strong>NPM Package</strong>: <a href="https://www.npmjs.com/package/@natec/mef-dev-ui-kit">npmjs.com/package/@natec/mef-dev-ui-kit</a></li>
+<li><strong>GitHub Repository</strong>: <a href="https://github.com/mef-dev/ui-kit-demo">github.com/mef-dev/ui-kit-demo</a></li>
+</ul>
+<h2 id="browser-support">Browser Support</h2>
+<ul>
+<li>Chrome (latest)</li>
+<li>Firefox (latest)</li>
+<li>Safari (latest)</li>
+<li>Edge (latest)</li>
+</ul>
+<h2 id="contributing">Contributing</h2>
+<p>This library is maintained by NATEC for the MEF.DEV platform.</p>
+<h2 id="license">License</h2>
+<p>Proprietary - Copyright © NATEC</p>
+<h2 id="support">Support</h2>
+<p>For issues, questions, or feature requests, please refer to the <a href="https://platform.mef.dev">MEF.DEV platform documentation</a>.</p>

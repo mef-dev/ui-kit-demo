@@ -1,0 +1,37 @@
+/* контейнер, відносно якого будемо позиціонувати кнопку, має бути position: relative */
+.theme-toggle {
+  position: absolute;     /* 🔹 абсолютні координати */
+  top: 12px;
+  right: 28px;
+  z-index: 1000;
+
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background-color: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+
+  opacity: .55;           /* 🔹 напівпрозорий за замовчуванням */
+  transition:
+    opacity .15s ease,
+    background-color .2s ease,
+    color .2s ease,
+    border-color .2s ease,
+    transform .08s ease;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;          /* 🔹 «норм» при наведенні/фокусі */
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  .icon { line-height: 0; }
+  .icon.hide { display: none; }
+}

@@ -1,0 +1,21 @@
+Control value: {{myControl.value || 'empty'}}
+
+<form class="example-form">
+    <input
+        #input
+        type="text"
+        placeholder="Pick one"
+        class="form-control"
+        [formControl]="myControl"
+        [mdAutocomplete]="auto"
+        (input)="filter()"
+        (focus)="filter()"s
+    />
+    <md-autocomplete requireSelection #auto="mdAutocomplete">
+        <md-option [value]="null"> Reset value</md-option>
+        @for (option of filteredOptions; track option) {
+        <md-option [value]="option">{{option}}</md-option>
+        }
+        <md-option disabled [value]="'test'">Disabled</md-option>
+    </md-autocomplete>
+</form>

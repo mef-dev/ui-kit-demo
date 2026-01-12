@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-central-page',
-  templateUrl: './central-page.component.html',
-  styleUrls: ['./central-page.component.scss']
+    selector: 'app-central-page',
+    templateUrl: './central-page.component.html',
+    styleUrls: ['./central-page.component.scss'],
+    standalone: false
 })
 export class CentralPageComponent implements OnInit {
   text = `api-unavailable-text`;

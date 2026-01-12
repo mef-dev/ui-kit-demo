@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  height: 100vh; 
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  grid-template-rows: 100%;
+  height: 100%;
+  background-color: var(--bg-nav) !important;
+}
+
+.layout__sidebar {
+  /* окрема прокрутка для навігації */
+  overflow-y: auto;
+  border-right: 1px solid rgba(0,0,0,0.06);
+  background-color: var(--bg-nav) !important; /* #f8f9fa; */
+}
+
+.layout__content {
+  position: relative;
+  min-width: 0; /* щоб працювали переповнення/рядки */
+  overflow: auto;
+}
+
+.layout__content-inner {
+  /* замінює inline padding & calc */
+  height: 100%;
+  padding: 24px; 
+  background: var(--bg);
+  box-shadow: inset 0 1px 0 rgba(0,0,0,0.02);
+  overflow: auto;
+}

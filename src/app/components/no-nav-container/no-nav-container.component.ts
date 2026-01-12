@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-no-nav-container',
-  templateUrl: './no-nav-container.component.html',
-  styleUrls: ['./no-nav-container.component.scss']
+    selector: 'app-no-nav-container',
+    templateUrl: './no-nav-container.component.html',
+    styleUrls: ['./no-nav-container.component.scss'],
+    standalone: false
 })
 export class NoNavContainerComponent implements OnInit {
 

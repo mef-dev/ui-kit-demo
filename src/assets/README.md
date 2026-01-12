@@ -2,9 +2,9 @@
 
 ## Description
 This is Ui-kit-lib to create plugins according to the template and visual on the platform [mefdev.com](https://preview.mef.dev/) with the help of ready made solutions.It provides users with the opportunity to explore and test various components and functionalities of the library before using them in their own projects.
-How to create your first Ui-package click [here](https://mef.dev/dev_guides/first_ui_plugin.md)
+How to create your first Ui-package click [here](https://platform.mef.dev/dev_guides/first_ui_plugin.md).
 
-Also you can check displaying of all the elements together here [UI-kit-demo](https://mef.dev/ui_kit_demo).
+Also you can check displaying of all the elements together here [UI-kit-demo](https://platform.mef.dev/ui_kit_demo).
 
 This guide created for Angular@15 version project. Cause we will use packages compatible with Angular 15 version.
 
@@ -36,11 +36,6 @@ You can use the library on the following versions of Angular:
   npm i bootstrap@5
   ```
 
-  > Ngx-bootstrap provides Bootstrap components powered by Angular, so you don't need to include original JS components.ngx-bootstrap:
-  ```sh
-  npm i ngx-bootstrap@10
-   ```
-
   > CSS font-family parser/stringifier. Font-awesome:
   ```sh
   npm i font-awesome@4
@@ -54,7 +49,7 @@ You can use the library on the following versions of Angular:
       "options": {
         "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
-              "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/pg/core.scss",
+              "node_modules/@natec/mef-dev-ui-kit/src/lib/styles/core.scss",
               "node_modules/font-awesome/scss/font-awesome.scss",
               "src/styles.scss"
         ]
@@ -134,7 +129,7 @@ After, you can use MefDev components in your project. Example of usage:
   
 ### Useful links:   
 ___
-   * Documentation of the library: https://mef.dev/ui_kit
-   * Demo of the library: https://mef.dev/ui_kit_demo
+   * Documentation of the library: https://platform.mef.dev/ui_kit
+   * Demo of the library: https://platform.mef.dev/ui_kit_demo
    * Library package: https://www.npmjs.com/package/@natec/mef-dev-ui-kit
    * Ui-kit-lib at GitHub: https://github.com/mef-dev/ui-kit-demo.git

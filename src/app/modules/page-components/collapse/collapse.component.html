@@ -1,0 +1,168 @@
+<h1>Collapse</h1>
+
+<mefdev-tabset tabAnimation="slide-left" Type="simple" ShowPagination="true">
+
+  <!-- TAB: Examples -->
+  <mefdev-tab>
+    <ng-template #TabHeading>Examples</ng-template>
+
+    <!-- Basic Accordion -->
+    <mefdev-collapse-set [Accordion]="true">
+      <mefdev-collapse>
+        <ng-template #CardTitle>Basic Collapse</ng-template>
+        <div class="body-4">
+          This is a basic example of a collapsible section. You can put any content here, such as text, images, or even forms.
+        </div>
+      </mefdev-collapse>
+
+      <mefdev-collapse [Active]="true">
+        <ng-template #CardTitle>Active Collapse</ng-template>
+        <div class="body-4">
+          This panel is open by default. Accordions help to organize large amounts of content in a compact space and keep the interface clean.
+        </div>
+      </mefdev-collapse>
+    </mefdev-collapse-set>
+
+    <!-- Accordion with Forms and Settings -->
+    <mefdev-collapse-set [Accordion]="true" [Horizontal]="true" [expandAny]="false" class="mt-4">
+
+      <mefdev-collapse [Active]="true">
+        <ng-template #CardTitle>Settings</ng-template>
+        <form>
+          <div class="container">
+            <div class="row g-4">
+
+              <div class="col-md-4">
+                <div class="form-group mb-4">
+                  <label class="fw-bold mb-2">Port Number</label>
+                  <input class="form-control" type="text" placeholder="Enter new port">
+                </div>
+                <div class="form-group mb-4">
+                  <label class="fw-bold mb-2">IP Address</label>
+                  <mefdev-select [FirstDefault]="true" class="w-100">
+                    <mefdev-option [Label]="'3306'" [Value]="'3306'"></mefdev-option>
+                    <mefdev-option [Label]="'4200'" [Value]="'4200'"></mefdev-option>
+                    <mefdev-option [Label]="'7100'" [Value]="'7100'"></mefdev-option>
+                  </mefdev-select>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-group mb-4">
+                  <label class="fw-bold mb-2">Update Email</label>
+                  <input class="form-control" type="email" placeholder="Enter new email">
+                </div>
+                <div class="form-group mb-4">
+                  <label class="fw-bold mb-2">Password</label>
+                  <input class="form-control" type="password" placeholder="Enter password">
+                </div>
+              </div>
+
+              <div class="col-md-4 d-flex flex-column justify-content-evenly align-items-center gap-4">
+                <div class="form-group mb-4 d-flex gap-3">
+                  <div class="form-check d-flex flex-column align-items-center">
+                    <input class="form-check-input mb-1" type="radio" name="protocol" id="protocolHttp" value="HTTP">
+                    <label class="form-check-label" for="protocolHttp">HTTP</label>
+                  </div>
+                  <div class="form-check d-flex flex-column align-items-center">
+                    <input class="form-check-input mb-1" type="radio" name="protocol" id="protocolHttps" value="HTTPS">
+                    <label class="form-check-label" for="protocolHttps">HTTPS</label>
+                  </div>
+                </div>
+                <div class="form-group w-100">
+                  <button class="btn btn-success w-100" type="submit">Update</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </mefdev-collapse>
+
+      <mefdev-collapse>
+        <ng-template #CardTitle>Comments</ng-template>
+        <form>
+          <div class="container">
+            <div class="row g-4">
+
+              <div class="col-md-7">
+                <div class="form-group mb-4">
+                  <label class="fw-bold mb-2">Title</label>
+                  <input class="form-control" type="text" placeholder="Enter comment title">
+                </div>
+                <div class="form-group mb-4">
+                  <label class="fw-bold mb-2">Body</label>
+                  <textarea class="form-control" rows="4" placeholder="Type your comment"></textarea>
+                </div>
+              </div>
+
+              <div class="col-md-5">
+                <div class="form-group mb-4">
+                  <label class="fw-bold mb-2">Choose Template</label>
+                  <mefdev-select [Mode]="'combobox'" class="w-100">
+                    <mefdev-option [Label]="'Template one'" [Value]="'Template one'"></mefdev-option>
+                    <mefdev-option [Label]="'Template two'" [Value]="'Template two'"></mefdev-option>
+                    <mefdev-option [Label]="'Template three'" [Value]="'Template three'"></mefdev-option>
+                  </mefdev-select>
+                </div>
+                <div class="form-group mb-4">
+                  <label class="fw-bold mb-2">Comment Priority</label>
+                  <mefdev-select class="w-100">
+                    <mefdev-option [Label]="'Low'" [Value]="'Low'"></mefdev-option>
+                    <mefdev-option [Label]="'Medium'" [Value]="'Medium'"></mefdev-option>
+                    <mefdev-option [Label]="'High'" [Value]="'High'"></mefdev-option>
+                  </mefdev-select>
+                </div>
+                <div class="form-group mb-4">
+                  <label class="fw-bold mb-2">Tag Friends</label>
+                  <mefdev-select [Size]="'lg'" [Multiple]="true" class="w-100">
+                    <mefdev-option [Label]="'Matt'" [Value]="'Matt'"></mefdev-option>
+                    <mefdev-option [Label]="'James'" [Value]="'James'"></mefdev-option>
+                    <mefdev-option [Label]="'Gerrard'" [Value]="'Gerrard'"></mefdev-option>
+                  </mefdev-select>
+                </div>
+                <div class="w-100 d-flex justify-content-between align-items-baseline">
+                  <div class="form-group d-flex flex-column align-items-center">
+                    <label class="fw-bold mb-2">Save as template</label>
+                    <input type="checkbox">
+                  </div>
+                  <div class="form-group d-flex flex-column align-items-center">
+                    <label class="fw-bold mb-2">Disable comment</label>
+                    <mefdev-switch
+                      class="m-2"
+                      [Size]="'small'"
+                      [Color]="'primary'">
+                    </mefdev-switch>
+                  </div>
+                </div>
+                <div class="form-group w-100 mt-4">
+                  <button class="btn btn-success float-end" type="submit">Create</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </mefdev-collapse>
+    </mefdev-collapse-set>
+  </mefdev-tab>
+
+  <!-- TAB: Html -->
+  <mefdev-tab>
+    <ng-template #TabHeading>HTML</ng-template>
+    <div class="body-3" #htmlRawEditor>
+      <!-- HTML raw code can be shown here -->
+      Paste your HTML here for live preview or reference.
+    </div>
+  </mefdev-tab>
+
+  <!-- TAB: Typescript -->
+  <mefdev-tab>
+    <ng-template #TabHeading>Typescript</ng-template>
+    <div class="body-3" #typescriptRawEditor>
+      <!-- Typescript code can be shown here -->
+      Paste your TypeScript code here for live preview or reference.
+    </div>
+  </mefdev-tab>
+
+</mefdev-tabset>

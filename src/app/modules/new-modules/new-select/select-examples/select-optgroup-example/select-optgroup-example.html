@@ -1,0 +1,11 @@
+<h4>md-select</h4>
+<md-select [formControl]="pokemonControl">
+    <md-option>-- None --</md-option>
+    @for (group of pokemonGroups; track group) {
+    <md-option-group [label]="group.name" [disabled]="group.disabled">
+        @for (pokemon of group.pokemon; track pokemon) {
+        <md-option [value]="pokemon.value">{{pokemon.viewValue}}</md-option>
+        }
+    </md-option-group>
+    }
+</md-select>

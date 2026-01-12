@@ -1,0 +1,12 @@
+@if ((asyncTabs | async) === null) {
+  Loading tabs...
+}
+
+<md-tab-group>
+  @for (tab of asyncTabs | async; track tab) {
+    <md-tab>
+      <ng-template md-tab-label>{{tab.label}}</ng-template>
+      {{tab.content}}
+    </md-tab>
+  }
+</md-tab-group>

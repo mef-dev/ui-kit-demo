@@ -1,0 +1,5 @@
+<md-select [formControl]="toppings" multiple>
+    @for (topping of toppingList; track topping) {
+    <md-option [value]="topping">{{topping}}</md-option>
+    }
+</md-select>

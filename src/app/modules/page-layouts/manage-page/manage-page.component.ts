@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ContentChild } from '@angular/core';
 
 @Component({
-  selector: 'app-manage-page',
-  templateUrl: './manage-page.component.html',
-  styleUrls: ['./manage-page.component.scss']
+    selector: 'app-manage-page',
+    templateUrl: './manage-page.component.html',
+    styleUrls: ['./manage-page.component.scss'],
+    standalone: false
 })
 export class ManagePageExampleComponent implements OnInit {
   constructor() { }

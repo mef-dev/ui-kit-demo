@@ -1,0 +1,33 @@
+<div class="example-action-buttons d-flex gap-2">
+    <button class="btn btn-primary" (click)="accordion().openAll()">Expand All</button>
+    <button class="btn btn-primary" (click)="accordion().closeAll()">Collapse All</button>
+</div>
+<md-accordion class="example-headers-align" multi>
+    <md-expansion-panel>
+        <md-expansion-panel-header>
+            <md-panel-title> Personal data </md-panel-title>
+            <md-panel-description> Type your name and age </md-panel-description>
+        </md-expansion-panel-header>
+
+        <input class="form-control" />
+
+        <input class="form-control" type="number" min="1" />
+    </md-expansion-panel>
+    <md-expansion-panel disabled>
+        <md-expansion-panel-header>
+            <md-panel-title> Destination </md-panel-title>
+            <md-panel-description> Type the country name </md-panel-description>
+        </md-expansion-panel-header>
+
+        <input class="form-control" />
+    </md-expansion-panel>
+
+    <md-expansion-panel>
+        <md-expansion-panel-header>
+            <md-panel-title> Something </md-panel-title>
+            <md-panel-description> Something </md-panel-description>
+        </md-expansion-panel-header>
+
+        <input class="form-control" />
+    </md-expansion-panel>
+</md-accordion>
